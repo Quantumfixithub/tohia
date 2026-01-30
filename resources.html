@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Educational resources about genotype compatibility, sickle cell disease, screening, and downloadable materials from TOHAI.">
+    <meta name="keywords" content="genotype, sickle cell, resources, education, compatibility chart, screening, TOHAI">
+    <meta name="author" content="Tochi Health Access Initiative">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Educational Resources - TOHAI">
+    <meta property="og:description" content="Learn about genotype compatibility, sickle cell disease, and access free educational materials">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tohai.org/resources.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <title>Resources - TOHAI | Educational Materials</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-red: #E63946;
+            --primary-blue: #1D3557;
+            --accent-green: #06D6A0;
+            --warm-cream: #F8F4F1;
+            --soft-gray: #A8DADC;
+            --dark-text: #1A1A2E;
+            --light-text: #F1FAEE;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--warm-cream);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 244, 241, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            border-bottom: 2px solid var(--primary-red);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            text-decoration: none;
+            letter-spacing: -1px;
+            z-index: 1001;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--primary-red);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--primary-red);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 5rem 2rem 2rem;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 1.1rem;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu .nav-cta {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            display: none;
+        }
+
+        .menu-overlay.active {
+            display: block;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 80px;
+            padding: 6rem 5% 4rem;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #2A4365 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '📚';
+            position: absolute;
+            font-size: clamp(10rem, 20vw, 20rem);
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .page-header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-header p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            line-height: 1.8;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        /* Educational Content Section */
+        .educational-section {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: rgba(29, 53, 87, 0.1);
+            color: var(--primary-blue);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            gap: 2.5rem;
+        }
+
+        .education-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .education-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .education-card-content {
+            padding: 2.5rem;
+        }
+
+        .education-icon {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .education-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .education-card p {
+            color: #4A5568;
+            line-height: 1.8;
+            font-size: clamp(0.95rem, 2vw, 1rem);
+        }
+
+        /* Genotype Table Section */
+        .genotype-section {
+            padding: 6rem 5%;
+            background: var(--warm-cream);
+        }
+
+        .genotype-table-container {
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .table-header {
+            background: var(--primary-blue);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .table-header h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .table-header p {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        .compatibility-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .compatibility-table th,
+        .compatibility-table td {
+            padding: clamp(1rem, 2vw, 1.5rem);
+            text-align: center;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .compatibility-table th {
+            background: var(--warm-cream);
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-size: clamp(0.85rem, 2vw, 1rem);
+        }
+
+        .compatibility-table td {
+            font-weight: 500;
+            font-size: clamp(0.8rem, 2vw, 0.95rem);
+        }
+
+        .safe {
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        .caution {
+            color: #F59E0B;
+            font-weight: 700;
+        }
+
+        .risky {
+            color: var(--primary-red);
+            font-weight: 700;
+        }
+
+        /* Myths Section */
+        .myths-section {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .myths-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .myth-card {
+            background: var(--warm-cream);
+            padding: clamp(2rem, 3vw, 2.5rem);
+            border-radius: 20px;
+            border-left: 5px solid var(--primary-red);
+        }
+
+        .myth-label {
+            display: inline-block;
+            background: var(--primary-red);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: clamp(0.75rem, 2vw, 0.85rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .fact-label {
+            display: inline-block;
+            background: var(--accent-green);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: clamp(0.75rem, 2vw, 0.85rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+
+        .myth-card h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .myth-card p {
+            color: #4A5568;
+            line-height: 1.8;
+            font-size: clamp(0.95rem, 2vw, 1rem);
+        }
+
+        /* Downloads Section */
+        .downloads-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0F233C 100%);
+            color: white;
+            position: relative;
+        }
+
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .download-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: clamp(2rem, 3vw, 2.5rem);
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        .download-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .download-icon {
+            font-size: clamp(3rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .download-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .download-card p {
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 2vw, 1.05rem);
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        .btn-white:hover {
+            background: var(--warm-cream);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--primary-red) 0%, #C62936 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary-red);
+        }
+
+        /* Footer */
+        footer {
+            background: #0F1419;
+            color: white;
+            padding: 3rem 5% 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: #A0AEC0;
+            line-height: 1.8;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .footer-links h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            margin-bottom: 1rem;
+            color: var(--accent-green);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #A0AEC0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: #718096;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links,
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .page-header {
+                margin-top: 70px;
+                padding: 4rem 5% 3rem;
+            }
+
+            .educational-section, .genotype-section, .myths-section, .downloads-section, .cta-section {
+                padding: 4rem 5%;
+            }
+
+            .education-card-image {
+                height: 150px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .compatibility-table th,
+            .compatibility-table td {
+                padding: 0.8rem 0.4rem;
+            }
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for accessibility */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--primary-red);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            nav,
+            .downloads-section,
+            .cta-section,
+            footer {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            .page-header {
+                margin-top: 0;
+            }
+
+            .genotype-table-container {
+                box-shadow: none;
+                border: 2px solid #000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="TOHAI Home">TOHAI</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+		<li><a href="impact.html">Impact</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="donate.html" class="nav-cta">Donate</a>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="programs.html">Programs</a></li>
+	    <li><a href="impact.html">Impact</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="donate.html" class="nav-cta">Donate</a>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Educational Resources</h1>
+            <p>Everything you need to know about genotype compatibility, sickle cell disease, and making informed health decisions.</p>
+        </div>
+    </section>
+
+   <!-- Educational Materials Section -->
+    <section class="educational-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Learn</span>
+                <h2 class="section-title">Educational Materials</h2>
+            </div>
+            <div class="education-grid">
+                <div class="education-card">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&h=400&fit=crop" alt="DNA and genetics research" class="education-card-image">
+                    <div class="education-card-content">
+                        <span class="education-icon">🧬</span>
+                        <h3>Understanding Genotypes</h3>
+                        <p>Learn about the different genotypes (AA, AS, SS, AC, SC) and what they mean for your health and future family planning.</p>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&h=400&fit=crop" alt="Heart health and care" class="education-card-image">
+                    <div class="education-card-content">
+                        <span class="education-icon">❤️</span>
+                        <h3>Sickle Cell Disease</h3>
+                        <p>Comprehensive information about sickle cell disease, its symptoms, management, and how it's inherited.</p>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=600&h=400&fit=crop" alt="Medical screening and testing" class="education-card-image">
+                    <div class="education-card-content">
+                        <span class="education-icon">🔬</span>
+                        <h3>Why Early Screening Matters</h3>
+                        <p>Discover the importance of early genotype screening for newborns, children, and young adults.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Genotype Compatibility Table -->
+    <section class="genotype-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Compatibility Guide</span>
+                <h2 class="section-title">Genotype Compatibility Chart</h2>
+            </div>
+            <div class="genotype-table-container">
+                <div class="table-header">
+                    <h3>Partnership Compatibility Matrix</h3>
+                    <p>Understanding genotype combinations and their implications</p>
+                </div>
+                <div class="table-wrapper">
+                    <table class="compatibility-table">
+                        <thead>
+                            <tr>
+                                <th>Partner 1</th>
+                                <th>Partner 2</th>
+                                <th>Children's Risk</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AA</td>
+                                <td>AA</td>
+                                <td>No Risk (100% AA)</td>
+                                <td class="safe">✓ Safe</td>
+                            </tr>
+                            <tr>
+                                <td>AA</td>
+                                <td>AS</td>
+                                <td>Low Risk (50% AA, 50% AS)</td>
+                                <td class="safe">✓ Safe</td>
+                            </tr>
+                            <tr>
+                                <td>AA</td>
+                                <td>SS</td>
+                                <td>All Carriers (100% AS)</td>
+                                <td class="caution">⚠ Caution</td>
+                            </tr>
+                            <tr>
+                                <td>AS</td>
+                                <td>AS</td>
+                                <td>25% SS, 50% AS, 25% AA</td>
+                                <td class="risky">✗ High Risk</td>
+                            </tr>
+                            <tr>
+                                <td>AS</td>
+                                <td>SS</td>
+                                <td>50% AS, 50% SS</td>
+                                <td class="risky">✗ High Risk</td>
+                            </tr>
+                            <tr>
+                                <td>SS</td>
+                                <td>SS</td>
+                                <td>100% SS</td>
+                                <td class="risky">✗ High Risk</td>
+                            </tr>
+                            <tr>
+                                <td>AA</td>
+                                <td>AC</td>
+                                <td>50% AA, 50% AC</td>
+                                <td class="safe">✓ Safe</td>
+                            </tr>
+                            <tr>
+                                <td>AS</td>
+                                <td>AC</td>
+                                <td>Complex (Requires Counseling)</td>
+                                <td class="caution">⚠ Caution</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Myths & Facts Section -->
+    <section class="myths-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Truth</span>
+                <h2 class="section-title">Sickle Cell Disease: Myths & Facts</h2>
+            </div>
+            <div class="myths-grid">
+                <div class="myth-card">
+                    <span class="myth-label">MYTH</span>
+                    <h4>Sickle cell disease only affects people of African descent</h4>
+                    <span class="fact-label">FACT</span>
+                    <p>While more common in people of African ancestry, sickle cell disease also occurs in people from Mediterranean, Middle Eastern, and South Asian backgrounds.</p>
+                </div>
+                <div class="myth-card">
+                    <span class="myth-label">MYTH</span>
+                    <h4>If both partners have AS genotype, all children will have sickle cell disease</h4>
+                    <span class="fact-label">FACT</span>
+                    <p>When both partners are AS, there's a 25% chance each child will have SS (sickle cell disease), 50% chance of AS (carrier), and 25% chance of AA (no trait).</p>
+                </div>
+                <div class="myth-card">
+                    <span class="myth-label">MYTH</span>
+                    <h4>People with AS genotype are sick</h4>
+                    <span class="fact-label">FACT</span>
+                    <p>People with AS genotype (sickle cell trait) are generally healthy and do not have symptoms of sickle cell disease. They are carriers of the trait.</p>
+                </div>
+                <div class="myth-card">
+                    <span class="myth-label">MYTH</span>
+                    <h4>Sickle cell disease can be cured easily</h4>
+                    <span class="fact-label">FACT</span>
+                    <p>While there's no widely available cure, sickle cell disease can be managed with proper medical care. Bone marrow transplant is currently the only potential cure but has risks and limitations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloadables Section -->
+    <section class="downloads-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label" style="background: rgba(255,255,255,0.2); color: white;">Downloads</span>
+                <h2 class="section-title" style="color: white;">Free Resources</h2>
+            </div>
+            <div class="downloads-grid">
+                <div class="download-card">
+                    <span class="download-icon" role="img" aria-label="Chart icon">📊</span>
+                    <h3>Genotype Compatibility Chart</h3>
+                    <p>Printable chart showing all genotype combinations and their implications</p>
+                    <a href="#" class="btn btn-white">Download PDF</a>
+                </div>
+                <div class="download-card">
+                    <span class="download-icon" role="img" aria-label="Books icon">📚</span>
+                    <h3>School Awareness Toolkit</h3>
+                    <p>Complete toolkit for educators to teach genotype education in schools</p>
+                    <a href="#" class="btn btn-white">Download ZIP</a>
+                </div>
+                <div class="download-card">
+                    <span class="download-icon" role="img" aria-label="Hospital icon">🏥</span>
+                    <h3>Screening Referral List</h3>
+                    <p>Directory of trusted healthcare facilities offering genotype screening services</p>
+                    <a href="#" class="btn btn-white">Download PDF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <h2>Have Questions?</h2>
+            <p>Our team is here to help. Reach out for more information about genotype compatibility, screening, or our programs.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-white">Contact Us</a>
+                <a href="programs.html" class="btn btn-outline">View Our Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>TOHAI</h3>
+                    <p>Tochi Health Access Initiative is committed to reducing the burden of sickle cell disease through education, screening, and advocacy.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Twitter">X</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+			<li><a href="impact.html">Impact</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="contact.html">Partner With Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@tohai.org">info@tohai.org</a></li>
+                        <li><a href="tel:+234">+234 XXX XXX XXXX</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tochi Health Access Initiative (TOHAI). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function toggleMenu() {
+            mobileMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            
+            // Toggle button icon
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenuBtn.textContent = '✕';
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenuBtn.textContent = '☰';
+                document.body.style.overflow = '';
+            }
+        }
+        
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+        
+        // Close menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

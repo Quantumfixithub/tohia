@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support TOHAI's mission to reduce sickle cell disease burden through donations. Make a one-time gift, become a monthly donor, or sponsor a screening.">
+    <meta name="keywords" content="donate, support, sickle cell, genotype, screening, TOHAI, Nigeria, charity">
+    <meta name="author" content="Tochi Health Access Initiative">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Donate - TOHAI">
+    <meta property="og:description" content="Support life-saving genotype education and sickle cell prevention programs in Nigeria">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tohai.org/donate.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <title>Donate - TOHAI | Support Sickle Cell Prevention</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-red: #E63946;
+            --primary-blue: #1D3557;
+            --accent-green: #06D6A0;
+            --warm-cream: #F8F4F1;
+            --soft-gray: #A8DADC;
+            --dark-text: #1A1A2E;
+            --light-text: #F1FAEE;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--warm-cream);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 244, 241, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            border-bottom: 2px solid var(--primary-red);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            text-decoration: none;
+            letter-spacing: -1px;
+            z-index: 1001;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--primary-red);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--primary-red);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 5rem 2rem 2rem;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 1.1rem;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu .nav-cta {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            display: none;
+        }
+
+        .menu-overlay.active {
+            display: block;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 80px;
+            padding: 6rem 5% 4rem;
+            background: linear-gradient(135deg, var(--primary-red) 0%, #C62936 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '❤️';
+            position: absolute;
+            font-size: clamp(10rem, 20vw, 20rem);
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .page-header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-header p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            line-height: 1.8;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        /* Payment Section */
+        .payment-section {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: rgba(230, 57, 70, 0.1);
+            color: var(--primary-red);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .currency-selector {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .currency-btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            background: var(--warm-cream);
+            border: 2px solid transparent;
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 2vw, 1.05rem);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--dark-text);
+        }
+
+        .currency-btn.active {
+            background: var(--primary-red);
+            color: white;
+            border-color: var(--primary-red);
+        }
+
+        .currency-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-options {
+            display: none;
+        }
+
+        .payment-options.active {
+            display: block;
+        }
+
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .amount-card {
+            background: var(--warm-cream);
+            padding: 2rem 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .amount-card:hover,
+        .amount-card.selected {
+            border-color: var(--primary-red);
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(230, 57, 70, 0.2);
+        }
+
+        .amount-value {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .amount-description {
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+            color: #4A5568;
+        }
+
+        .custom-amount {
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+
+        .custom-amount label {
+            display: block;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .custom-amount input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid #E2E8F0;
+            border-radius: 12px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            transition: all 0.3s ease;
+        }
+
+        .custom-amount input:focus {
+            outline: none;
+            border-color: var(--primary-red);
+        }
+
+        .payment-methods {
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: var(--warm-cream);
+            border-radius: 20px;
+        }
+
+        .payment-methods h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .method-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .method-btn {
+            padding: 1.2rem 2rem;
+            background: white;
+            border: 2px solid #E2E8F0;
+            border-radius: 12px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .method-btn:hover {
+            border-color: var(--primary-red);
+            background: white;
+            transform: translateX(5px);
+        }
+
+        .method-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Donation Options Section */
+        .donation-section {
+            padding: 6rem 5%;
+            background: var(--warm-cream);
+        }
+
+        .donation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .donation-card {
+            background: white;
+            padding: clamp(2rem, 4vw, 3rem);
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            cursor: pointer;
+        }
+
+        .donation-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-red);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .donation-icon {
+            font-size: clamp(3rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .donation-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .donation-card p {
+            color: #4A5568;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: clamp(0.95rem, 2vw, 1rem);
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 2vw, 1.05rem);
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary-red);
+            color: white;
+            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+        }
+
+        /* Impact Section */
+        .impact-section {
+            padding: 6rem 5%;
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+        }
+
+        .impact-amount {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-weight: 800;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+        }
+
+        .impact-description {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            line-height: 1.7;
+        }
+
+        /* Sponsorship Section */
+        .sponsorship-section {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .sponsor-card {
+            background: var(--warm-cream);
+            padding: clamp(2.5rem, 5vw, 4rem);
+            border-radius: 30px;
+            text-align: center;
+            max-width: 800px;
+            margin: 3rem auto 0;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .sponsor-icon {
+            font-size: clamp(3.5rem, 8vw, 5rem);
+            margin-bottom: 2rem;
+        }
+
+        .sponsor-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .sponsor-price {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: var(--primary-red);
+            margin: 1.5rem 0;
+        }
+
+        .sponsor-card p {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: #4A5568;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        /* Monthly Giving Section */
+        .monthly-giving {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--accent-green) 0%, #04A07C 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .monthly-giving h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .monthly-giving p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--accent-green);
+        }
+
+        .btn-white:hover {
+            background: var(--warm-cream);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Partnership Section */
+        .partnership-section {
+            padding: 6rem 5%;
+            background: var(--warm-cream);
+        }
+
+        .partnership-content {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            text-align: center;
+        }
+
+        .partnership-content h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .partnership-content p {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: #4A5568;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+
+        .partnership-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            text-align: left;
+        }
+
+        .benefit-item {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-red);
+        }
+
+        .benefit-item h4 {
+            font-family: 'Sora', sans-serif;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+        }
+
+        .benefit-item p {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        /* Footer */
+        footer {
+            background: #0F1419;
+            color: white;
+            padding: 3rem 5% 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: #A0AEC0;
+            line-height: 1.8;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .footer-links h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            margin-bottom: 1rem;
+            color: var(--accent-green);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #A0AEC0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: #718096;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links,
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .page-header {
+                margin-top: 70px;
+                padding: 4rem 5% 3rem;
+            }
+
+            .payment-section, .donation-section, .impact-section,
+            .sponsorship-section, .monthly-giving, .partnership-section {
+                padding: 4rem 5%;
+            }
+
+            .currency-selector {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .currency-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .amount-card {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for accessibility */
+        a:focus,
+        button:focus,
+        input:focus {
+            outline: 3px solid var(--primary-red);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="TOHAI Home">TOHAI</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+		<li><a href="impact.html">Impact</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="donate.html" class="nav-cta active">Donate</a>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="programs.html">Programs</a></li>
+	    <li><a href="impact.html">Impact</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="donate.html" class="nav-cta">Donate</a>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Make a Difference Today</h1>
+            <p>Your support helps TOHAI provide genotype education, early screening, and referral support to young people and families across Nigeria. Every contribution saves lives.</p>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="payment-section" id="payment-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Donate Now</span>
+                <h2 class="section-title">Choose Your Donation Amount</h2>
+            </div>
+
+            <!-- Currency Selector -->
+            <div class="currency-selector">
+                <button class="currency-btn active" data-currency="naira">
+                    💰 Nigerian Naira (₦)
+                </button>
+                <button class="currency-btn" data-currency="usd">
+                    💵 US Dollars ($)
+                </button>
+            </div>
+
+            <!-- Naira Payment Options -->
+            <div class="payment-options active" id="naira-options">
+                <div class="amount-grid">
+                    <div class="amount-card" data-amount="5000">
+                        <div class="amount-value">₦5,000</div>
+                        <p class="amount-description">Screen 1 child</p>
+                    </div>
+                    <div class="amount-card" data-amount="10000">
+                        <div class="amount-value">₦10,000</div>
+                        <p class="amount-description">Screen 2 children</p>
+                    </div>
+                    <div class="amount-card" data-amount="25000">
+                        <div class="amount-value">₦25,000</div>
+                        <p class="amount-description">School workshop</p>
+                    </div>
+                    <div class="amount-card" data-amount="50000">
+                        <div class="amount-value">₦50,000</div>
+                        <p class="amount-description">Community drive</p>
+                    </div>
+                    <div class="amount-card" data-amount="100000">
+                        <div class="amount-value">₦100,000</div>
+                        <p class="amount-description">Full program</p>
+                    </div>
+                    <div class="amount-card" data-amount="250000">
+                        <div class="amount-value">₦250,000</div>
+                        <p class="amount-description">Major impact</p>
+                    </div>
+                </div>
+
+                <div class="custom-amount">
+                    <label for="custom-naira">Or enter a custom amount (₦):</label>
+                    <input type="number" id="custom-naira" placeholder="Enter amount in Naira" min="1000" step="1000">
+                </div>
+
+                <div class="payment-methods">
+                    <h3>Select Payment Method</h3>
+                    <div class="method-grid">
+                        <button class="method-btn">
+                            <span class="method-icon">💳</span>
+                            <span>Pay with Card (Paystack)</span>
+                        </button>
+                        <button class="method-btn">
+                            <span class="method-icon">🏦</span>
+                            <span>Bank Transfer</span>
+                        </button>
+                        <button class="method-btn">
+                            <span class="method-icon">📱</span>
+                            <span>Mobile Money</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- USD Payment Options -->
+            <div class="payment-options" id="usd-options">
+                <div class="amount-grid">
+                    <div class="amount-card" data-amount="10">
+                        <div class="amount-value">$10</div>
+                        <p class="amount-description">Basic support</p>
+                    </div>
+                    <div class="amount-card" data-amount="25">
+                        <div class="amount-value">$25</div>
+                        <p class="amount-description">Screen 5 children</p>
+                    </div>
+                    <div class="amount-card" data-amount="50">
+                        <div class="amount-value">$50</div>
+                        <p class="amount-description">School workshop</p>
+                    </div>
+                    <div class="amount-card" data-amount="100">
+                        <div class="amount-value">$100</div>
+                        <p class="amount-description">Community drive</p>
+                    </div>
+                    <div class="amount-card" data-amount="250">
+                        <div class="amount-value">$250</div>
+                        <p class="amount-description">Full program</p>
+                    </div>
+                    <div class="amount-card" data-amount="500">
+                        <div class="amount-value">$500</div>
+                        <p class="amount-description">Major impact</p>
+                    </div>
+                </div>
+
+                <div class="custom-amount">
+                    <label for="custom-usd">Or enter a custom amount ($):</label>
+                    <input type="number" id="custom-usd" placeholder="Enter amount in USD" min="5" step="5">
+                </div>
+
+                <div class="payment-methods">
+                    <h3>Select Payment Method</h3>
+                    <div class="method-grid">
+                        <button class="method-btn">
+                            <span class="method-icon">💳</span>
+                            <span>Pay with Card (Stripe)</span>
+                        </button>
+                        <button class="method-btn">
+                            <span class="method-icon">🅿️</span>
+                            <span>PayPal</span>
+                        </button>
+                        <button class="method-btn">
+                            <span class="method-icon">🏦</span>
+                            <span>Bank Transfer</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ways to Give Section -->
+    <section class="donation-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Ways to Give</span>
+                <h2 class="section-title">Other Ways to Support Our Mission</h2>
+            </div>
+            <div class="donation-grid">
+                <div class="donation-card">
+                    <span class="donation-icon" role="img" aria-label="Gift icon">💝</span>
+                    <h3>One-Time Donation</h3>
+                    <p>Make an immediate impact with a one-time gift. Every amount helps us reach more communities with life-saving education and screening.</p>
+                    <a href="#payment-section" class="btn btn-primary">Donate Now</a>
+                </div>
+                <div class="donation-card">
+                    <span class="donation-icon" role="img" aria-label="Recurring icon">🔄</span>
+                    <h3>Monthly Giving</h3>
+                    <p>Join our Health Access Champions with a recurring monthly donation. Provide sustained support for ongoing programs and outreach.</p>
+                    <a href="#payment-section" class="btn btn-primary">Give Monthly</a>
+                </div>
+                <div class="donation-card">
+                    <span class="donation-icon" role="img" aria-label="Hospital icon">🏥</span>
+                    <h3>Sponsor a Screening</h3>
+                    <p>Sponsor genotype screening for a child or family. ₦5,000 provides screening and counseling for one individual.</p>
+                    <a href="#payment-section" class="btn btn-primary">Sponsor Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Your Donation Supports -->
+    <section class="impact-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label" style="background: rgba(255,255,255,0.2); color: white;">Your Impact</span>
+                <h2 class="section-title" style="color: white;">What Your Donation Supports</h2>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <div class="impact-amount">₦5,000</div>
+                    <p class="impact-description">Provides genotype screening and counseling for one child</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-amount">₦25,000</div>
+                    <p class="impact-description">Funds a complete school genotype awareness workshop for 50 students</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-amount">₦50,000</div>
+                    <p class="impact-description">Supports a community screening drive reaching 30-40 families</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-amount">₦100,000+</div>
+                    <p class="impact-description">Powers comprehensive programs including education, screening, referrals, and advocacy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor a Screening -->
+    <section class="sponsorship-section" id="sponsorship">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Direct Impact</span>
+                <h2 class="section-title">Sponsor a Screening</h2>
+            </div>
+            <div class="sponsor-card">
+                <div class="sponsor-icon" role="img" aria-label="Microscope icon">🔬</div>
+                <h3>Change a Life with Knowledge</h3>
+                <div class="sponsor-price">₦5,000 per child</div>
+                <p>Your sponsorship provides complete genotype screening, pre-test counseling, test results interpretation, post-test guidance, and referral support for one individual. This simple act of generosity can prevent sickle cell disease in future generations.</p>
+                <a href="#payment-section" class="btn btn-primary">Sponsor a Screening</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monthly Giving CTA -->
+    <section class="monthly-giving" id="monthly-giving">
+        <div class="section-container">
+            <h2>Become a Health Access Champion</h2>
+            <p>Join our community of monthly donors providing sustained support for education, screening, and advocacy programs year-round.</p>
+            <a href="#payment-section" class="btn btn-white">Start Monthly Giving</a>
+        </div>
+    </section>
+
+    <!-- Corporate & Institutional Partnerships -->
+    <section class="partnership-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Partnerships</span>
+                <h2 class="section-title">Corporate & Institutional Support</h2>
+            </div>
+            <div class="partnership-content">
+                <h3>Partner With Us for Greater Impact</h3>
+                <p>We welcome partnerships with corporations, foundations, and institutions committed to health equity and sickle cell disease prevention. Together, we can scale our programs and reach more communities across Nigeria.</p>
+                <div class="partnership-benefits">
+                    <div class="benefit-item">
+                        <h4>Strategic Alignment</h4>
+                        <p>Align your CSR goals with impactful health programs</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Measurable Impact</h4>
+                        <p>Track and report on program outcomes and lives changed</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Brand Visibility</h4>
+                        <p>Recognition across our platforms and community programs</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>Employee Engagement</h4>
+                        <p>Volunteer opportunities for your team members</p>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Explore Partnership Opportunities</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>TOHAI</h3>
+                    <p>Tochi Health Access Initiative is committed to reducing the burden of sickle cell disease through education, screening, and advocacy.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Twitter">X</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+			<li><a href="impact.html">Impact</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="contact.html">Partner With Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="/cdn-cgi/l/email-protection#620b0c040d22160d0a030b4c0d1005"><span class="__cf_email__" data-cfemail="50393e363f10243f3831397e3f2237">[email&#160;protected]</span></a></li>
+                        <li><a href="tel:+234">+234 XXX XXX XXXX</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tochi Health Access Initiative (TOHAI). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function toggleMenu() {
+            mobileMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenuBtn.textContent = '✕';
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenuBtn.textContent = '☰';
+                document.body.style.overflow = '';
+            }
+        }
+        
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+        
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        // Currency switcher
+        const currencyBtns = document.querySelectorAll('.currency-btn');
+        const paymentOptions = document.querySelectorAll('.payment-options');
+
+        currencyBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const currency = btn.dataset.currency;
+                
+                // Update active button
+                currencyBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Show corresponding payment options
+                paymentOptions.forEach(option => option.classList.remove('active'));
+                document.getElementById(`${currency}-options`).classList.add('active');
+            });
+        });
+
+        // Amount selection
+        const amountCards = document.querySelectorAll('.amount-card');
+        amountCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Remove selection from all cards
+                card.parentElement.querySelectorAll('.amount-card').forEach(c => c.classList.remove('selected'));
+                // Add selection to clicked card
+                card.classList.add('selected');
+                
+                const amount = card.dataset.amount;
+                console.log('Selected amount:', amount);
+            });
+        });
+
+        // Payment method buttons
+        const methodBtns = document.querySelectorAll('.method-btn');
+        methodBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert('Payment integration would be implemented here. This is a demonstration.');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

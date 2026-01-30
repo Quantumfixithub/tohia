@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join TOHAI as a volunteer. Make a difference through community outreach, screening support, digital advocacy, and more.">
+    <meta name="keywords" content="volunteer, TOHAI, sickle cell, community service, health advocacy, Nigeria">
+    <meta name="author" content="Tochi Health Access Initiative">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Volunteer - TOHAI">
+    <meta property="og:description" content="Join our community of volunteers making a difference in sickle cell disease prevention">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tohai.org/volunteer.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <title>Volunteer - TOHAI | Join Our Community</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-red: #E63946;
+            --primary-blue: #1D3557;
+            --accent-green: #06D6A0;
+            --warm-cream: #F8F4F1;
+            --soft-gray: #A8DADC;
+            --dark-text: #1A1A2E;
+            --light-text: #F1FAEE;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--warm-cream);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 244, 241, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            border-bottom: 2px solid var(--primary-red);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            text-decoration: none;
+            letter-spacing: -1px;
+            z-index: 1001;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--primary-red);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--primary-red);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 5rem 2rem 2rem;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 1.1rem;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu .nav-cta {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            display: none;
+        }
+
+        .menu-overlay.active {
+            display: block;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 80px;
+            padding: 6rem 5% 4rem;
+            background: linear-gradient(135deg, var(--accent-green) 0%, #04A07C 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '🤝';
+            position: absolute;
+            font-size: clamp(10rem, 20vw, 20rem);
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .page-header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-header p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            line-height: 1.8;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        /* Opportunities Section */
+        .opportunities-section {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: rgba(6, 214, 160, 0.1);
+            color: var(--accent-green);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .opportunities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            gap: 2.5rem;
+        }
+
+        .opportunity-card {
+            background: var(--warm-cream);
+            padding: clamp(2rem, 4vw, 3rem);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary-red);
+        }
+
+        .opportunity-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .opportunity-icon {
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .opportunity-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .opportunity-card p {
+            color: #4A5568;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: clamp(0.95rem, 2vw, 1rem);
+        }
+
+        .opportunity-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: white;
+            color: var(--primary-red);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: clamp(0.75rem, 2vw, 0.85rem);
+            font-weight: 600;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 6rem 5%;
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            line-height: 1.7;
+            opacity: 0.95;
+            font-size: clamp(0.95rem, 2vw, 1rem);
+        }
+
+        /* Application Process Section */
+        .process-section {
+            padding: 6rem 5%;
+            background: var(--warm-cream);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step-card h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .step-card p {
+            color: #4A5568;
+            line-height: 1.7;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--primary-red) 0%, #C62936 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 2vw, 1.05rem);
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary-red);
+        }
+
+        .btn-white:hover {
+            background: var(--warm-cream);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary-red);
+        }
+
+        /* Footer */
+        footer {
+            background: #0F1419;
+            color: white;
+            padding: 3rem 5% 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: #A0AEC0;
+            line-height: 1.8;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .footer-links h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            margin-bottom: 1rem;
+            color: var(--accent-green);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #A0AEC0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: #718096;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links,
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .page-header {
+                margin-top: 70px;
+                padding: 4rem 5% 3rem;
+            }
+
+            .opportunities-section, .benefits-section, 
+            .process-section, .cta-section {
+                padding: 4rem 5%;
+            }
+
+            .opportunity-card:hover {
+                transform: translateX(5px);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .opportunity-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for accessibility */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--primary-red);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            nav,
+            .cta-section,
+            footer {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            .page-header {
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="TOHAI Home">TOHAI</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="donate.html" class="nav-cta">Donate</a>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="donate.html" class="nav-cta">Donate</a>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Join Our Volunteer Community</h1>
+            <p>Be part of a passionate network driving change in sickle cell disease prevention and care across Nigeria. Your time and skills can save lives.</p>
+        </div>
+    </section>
+
+    <!-- Volunteer Opportunities Section -->
+    <section class="opportunities-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Opportunities</span>
+                <h2 class="section-title">How You Can Volunteer</h2>
+            </div>
+            <div class="opportunities-grid">
+                <div class="opportunity-card">
+                    <span class="opportunity-icon" role="img" aria-label="Speaking icon">🗣️</span>
+                    <h3>Community Outreach</h3>
+                    <p>Join our team in schools, communities, and events to educate people about genotype compatibility and sickle cell disease prevention.</p>
+                    <div class="opportunity-tags">
+                        <span class="tag">On-site</span>
+                        <span class="tag">Weekends</span>
+                        <span class="tag">Training Provided</span>
+                    </div>
+                </div>
+                <div class="opportunity-card">
+                    <span class="opportunity-icon" role="img" aria-label="Hospital icon">🏥</span>
+                    <h3>Screening Support</h3>
+                    <p>Assist with registration, logistics, and support during genotype screening drives. Non-medical roles available.</p>
+                    <div class="opportunity-tags">
+                        <span class="tag">On-site</span>
+                        <span class="tag">Flexible</span>
+                        <span class="tag">No Medical Background Required</span>
+                    </div>
+                </div>
+                <div class="opportunity-card">
+                    <span class="opportunity-icon" role="img" aria-label="Computer icon">💻</span>
+                    <h3>Digital Advocacy</h3>
+                    <p>Help us amplify our message online through social media management, content creation, graphic design, and digital campaigns.</p>
+                    <div class="opportunity-tags">
+                        <span class="tag">Remote</span>
+                        <span class="tag">Flexible Hours</span>
+                        <span class="tag">Creative</span>
+                    </div>
+                </div>
+                <div class="opportunity-card">
+                    <span class="opportunity-icon" role="img" aria-label="Chart icon">📊</span>
+                    <h3>Research & Data</h3>
+                    <p>Support our research initiatives, data collection, analysis, and reporting to strengthen our evidence-based programs.</p>
+                    <div class="opportunity-tags">
+                        <span class="tag">Remote</span>
+                        <span class="tag">Technical</span>
+                        <span class="tag">Research Experience</span>
+                    </div>
+                </div>
+                <div class="opportunity-card">
+                    <span class="opportunity-icon" role="img" aria-label="Target icon">🎯</span>
+                    <h3>Event & Logistics</h3>
+                    <p>Help plan and coordinate workshops, screening drives, awareness campaigns, and community events.</p>
+                    <div class="opportunity-tags">
+                        <span class="tag">Hybrid</span>
+                        <span class="tag">Organizational Skills</span>
+                        <span class="tag">Team-oriented</span>
+                    </div>
+                </div>
+                <div class="opportunity-card">
+                    <span class="opportunity-icon" role="img" aria-label="Writing icon">✍️</span>
+                    <h3>Content & Writing</h3>
+                    <p>Create educational materials, blog posts, stories, and resources that inform and inspire communities.</p>
+                    <div class="opportunity-tags">
+                        <span class="tag">Remote</span>
+                        <span class="tag">Writing Skills</span>
+                        <span class="tag">Creative</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label" style="background: rgba(255,255,255,0.2); color: white;">Why Volunteer</span>
+                <h2 class="section-title" style="color: white;">Benefits of Volunteering With TOHAI</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon" role="img" aria-label="Strength icon">💪</span>
+                    <h3>Make Direct Impact</h3>
+                    <p>Contribute to sickle cell disease prevention and see the tangible difference your work makes in communities.</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon" role="img" aria-label="Graduation icon">🎓</span>
+                    <h3>Gain Experience</h3>
+                    <p>Build valuable skills in public health, community engagement, advocacy, and nonprofit work.</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon" role="img" aria-label="Certificate icon">📜</span>
+                    <h3>Training & Certificates</h3>
+                    <p>Receive comprehensive training and earn certificates recognizing your volunteer contributions.</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon" role="img" aria-label="Globe icon">🌍</span>
+                    <h3>Network & Community</h3>
+                    <p>Join a passionate network of changemakers committed to health equity and social impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process -->
+    <section class="process-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">How to Join</span>
+                <h2 class="section-title">Volunteer Application Process</h2>
+            </div>
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>Apply Online</h4>
+                    <p>Complete our volunteer application form with your interests, skills, and availability.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>Initial Review</h4>
+                    <p>Our team reviews your application and matches you with suitable opportunities.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>Orientation & Training</h4>
+                    <p>Attend orientation and receive training on TOHAI programs and volunteer responsibilities.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4>Start Volunteering</h4>
+                    <p>Begin your volunteer journey and make a difference in your community!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <h2>Ready to Make a Difference?</h2>
+            <p>Join our community of volunteers and be part of the solution. Your time and talent can save lives.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-white">Become a Volunteer</a>
+                <a href="contact.html" class="btn btn-outline">Join Outreach Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>TOHAI</h3>
+                    <p>Tochi Health Access Initiative is committed to reducing the burden of sickle cell disease through education, screening, and advocacy.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Twitter">X</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="contact.html">Partner With Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@tohai.org">info@tohai.org</a></li>
+                        <li><a href="tel:+234">+234 XXX XXX XXXX</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tochi Health Access Initiative (TOHAI). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function toggleMenu() {
+            mobileMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            
+            // Toggle button icon
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenuBtn.textContent = '✕';
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenuBtn.textContent = '☰';
+                document.body.style.overflow = '';
+            }
+        }
+        
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+        
+        // Close menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

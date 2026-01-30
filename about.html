@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about TOHAI - Tochi Health Access Initiative. Our mission, vision, and approach to reducing the burden of sickle cell disease in Nigeria.">
+    <meta name="keywords" content="TOHAI, about us, sickle cell, genotype, Nigeria, mission, vision">
+    <meta name="author" content="Tochi Health Access Initiative">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About Us - TOHAI">
+    <meta property="og:description" content="Learn about our mission to reduce the burden of sickle cell disease through education, screening, and advocacy">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tohai.org/about.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <title>About Us - TOHAI | Tochi Health Access Initiative</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-red: #E63946;
+            --primary-blue: #1D3557;
+            --accent-green: #06D6A0;
+            --warm-cream: #F8F4F1;
+            --soft-gray: #A8DADC;
+            --dark-text: #1A1A2E;
+            --light-text: #F1FAEE;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--warm-cream);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 244, 241, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            border-bottom: 2px solid var(--primary-red);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            text-decoration: none;
+            letter-spacing: -1px;
+            z-index: 1001;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--primary-red);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--primary-red);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 5rem 2rem 2rem;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 1.1rem;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu .nav-cta {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            display: none;
+        }
+
+        .menu-overlay.active {
+            display: block;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 80px;
+            padding: 6rem 5% 4rem;
+            background: linear-gradient(135deg, rgba(29, 53, 87, 0.95) 0%, rgba(42, 67, 101, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1600&h=600&fit=crop') center/cover;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: float 15s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(5deg); }
+            66% { transform: translate(-20px, 20px) rotate(-5deg); }
+        }
+
+        .page-header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-header p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            line-height: 1.8;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        /* Main Content Section */
+        .content-section {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .content-text h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .content-text p {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            line-height: 1.9;
+            color: #4A5568;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-visual {
+            position: relative;
+        }
+
+        .content-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border: 4px solid var(--primary-red);
+        }
+
+        /* Mission & Vision Section */
+        .mission-vision {
+            padding: 6rem 5%;
+            background: var(--warm-cream);
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .mv-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mv-card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .mv-card-content {
+            padding: 3rem;
+        }
+
+        .mv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-red) 0%, var(--accent-green) 100%);
+        }
+
+        .mv-icon {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .mv-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .mv-card p {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            line-height: 1.9;
+            color: #4A5568;
+        }
+
+        /* Approach Section */
+        .approach {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: rgba(230, 57, 70, 0.1);
+            color: var(--primary-red);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: 2rem;
+        }
+
+        .approach-item {
+            background: var(--warm-cream);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border-left: 5px solid var(--primary-red);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .approach-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=200&h=200&fit=crop') center/cover;
+            opacity: 0.05;
+            border-radius: 50%;
+        }
+
+        .approach-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .approach-number {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .approach-item h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            color: var(--primary-blue);
+            margin-bottom: 0.8rem;
+        }
+
+        .approach-item p {
+            color: #4A5568;
+            line-height: 1.8;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        /* Team Section */
+        .team {
+            padding: 6rem 5%;
+            background: var(--warm-cream);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .team-info h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-info p {
+            color: var(--primary-red);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .team-info span {
+            color: #4A5568;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.95) 0%, rgba(198, 41, 54, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1600&h=600&fit=crop') center/cover;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.9) 0%, rgba(198, 41, 54, 0.9) 100%);
+            z-index: 0;
+        }
+
+        .cta .section-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(0.9rem, 2vw, 1.05rem);
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary-red);
+        }
+
+        .btn-white:hover {
+            background: var(--warm-cream);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #0F1419;
+            color: white;
+            padding: 3rem 5% 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: #A0AEC0;
+            line-height: 1.8;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .footer-links h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            margin-bottom: 1rem;
+            color: var(--accent-green);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #A0AEC0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: #718096;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .two-column, .mv-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .content-section, .mission-vision, .approach, .cta, .team {
+                padding: 4rem 3%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links,
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .page-header {
+                margin-top: 70px;
+                padding: 4rem 5% 3rem;
+            }
+
+            .content-section, .mission-vision, .approach, .team {
+                padding: 3rem 5%;
+            }
+
+            .content-image {
+                height: 350px;
+            }
+
+            .approach-item:hover {
+                transform: translateX(5px);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .approach-item {
+                padding: 2rem;
+            }
+
+            .team-image {
+                height: 250px;
+            }
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for accessibility */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--primary-red);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            nav,
+            .cta,
+            footer {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            .page-header {
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="TOHAI Home">TOHAI</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+		<li><a href="impact.html">Impact</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="donate.html" class="nav-cta">Donate</a>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="programs.html">Programs</a></li>
+	    <li><a href="impact.html">Impact</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="donate.html" class="nav-cta">Donate</a>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>About TOHAI</h1>
+            <p>We are a community of passionate individuals committed to creating a Nigeria where every young person understands their genotype, every newborn is screened early, and every family receives timely care and support.</p>
+        </div>
+    </section>
+
+    <!-- Who We Are Section -->
+    <section class="content-section">
+        <div class="section-container">
+            <div class="two-column">
+                <div class="content-text">
+                    <h2>Who We Are</h2>
+                    <p style="text-align: justify;">Tochi Health Access Initiative (TOHAI) works with young people, families, schools, healthcare providers, communities, and policymakers to ensure comprehensive genotype education and sickle cell disease prevention across Nigeria.</p>
+                    <p style="text-align: justify;">We believe that knowledge is power. By empowering individuals with information about their genotype and connecting them to essential screening and support services, we are building a healthier future for all Nigerians.</p>
+                    <p style="text-align: justify;">Our work is driven by compassion, evidence, and a deep commitment to health equity. Every initiative we undertake is designed with the communities we serve, ensuring that our programs are culturally relevant, accessible, and impactful.</p>
+                </div>
+                <div class="content-visual">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&h=600&fit=crop" alt="Healthcare team working together" class="content-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Our Purpose</span>
+                <h2 class="section-title">Mission & Vision</h2>
+            </div>
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=400&fit=crop" alt="Healthcare mission in action" class="mv-card-image">
+                    <div class="mv-card-content">
+                        <span class="mv-icon" role="img" aria-label="Target icon">🎯</span>
+                        <h3>Our Mission</h3>
+                        <p style="text-align: justify;">To reduce the burden of sickle cell disease, improve health outcomes, and promote informed reproductive health decisions through education, screening, and advocacy.</p>
+                    </div>
+                </div>
+                <div class="mv-card">
+                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&h=400&fit=crop" alt="Community vision and hope" class="mv-card-image">
+                    <div class="mv-card-content">
+                        <span class="mv-icon" role="img" aria-label="Star icon">🌟</span>
+                        <h3>Our Vision</h3>
+                        <p>A Nigeria where every young person knows their genotype, every newborn is screened early, and every family receives timely care and support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Our Approach -->
+    <section class="approach">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">How We Work</span>
+                <h2 class="section-title">Our Approach</h2>
+            </div>
+            <div class="approach-grid">
+                <div class="approach-item">
+                    <div class="approach-number">01</div>
+                    <h4>Community-Centered Education</h4>
+                    <p style="text-align: justify;">We design programs with input from the communities we serve, ensuring cultural relevance and maximum impact.</p>
+                </div>
+                <div class="approach-item">
+                    <div class="approach-number">02</div>
+                    <h4>Youth-Focused Outreach</h4>
+                    <p style="text-align: justify;">Young people are at the heart of our work. We empower them with knowledge to make informed health decisions.</p>
+                </div>
+                <div class="approach-item">
+                    <div class="approach-number">03</div>
+                    <h4>Strategic Partnerships</h4>
+                    <p style="text-align: justify;">Collaboration with schools, healthcare providers, and organizations amplifies our reach and effectiveness.</p>
+                </div>
+                <div class="approach-item">
+                    <div class="approach-number">04</div>
+                    <h4>Evidence-Based Advocacy</h4>
+                    <p style="text-align: justify;">We use data and research to inform policy recommendations and strengthen national health programs.</p>
+                </div>
+                <div class="approach-item">
+                    <div class="approach-number">05</div>
+                    <h4>Comprehensive Referral Systems</h4>
+                    <p style="text-align: justify;">We connect families to quality healthcare, counseling, and support networks for ongoing care.</p>
+                </div>
+                <div class="approach-item">
+                    <div class="approach-number">06</div>
+                    <h4>Capacity Building & Training</h4>
+                    <p style="text-align: justify;">We strengthen the skills of healthcare workers, educators, and volunteers to deliver sustainable sickle cell interventions nationwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Our Team</span>
+                <h2 class="section-title">Meet the People Behind TOHAI</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=600&fit=crop" alt="Team member portrait" class="team-image">
+                    <div class="team-info">
+                        <h4>Leadership Team</h4>
+                        <p>Executive Director</p>
+                        <span>Passionate about health equity and community empowerment</span>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=600&fit=crop" alt="Team member portrait" class="team-image">
+                    <div class="team-info">
+                        <h4>Medical Advisors</h4>
+                        <p>Healthcare Specialists</p>
+                        <span>Expert guidance on sickle cell disease prevention and care</span>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=600&fit=crop" alt="Team member portrait" class="team-image">
+                    <div class="team-info">
+                        <h4>Community Coordinators</h4>
+                        <p>Outreach Leaders</p>
+                        <span>Building bridges between TOHAI and communities</span>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop" alt="Team member portrait" class="team-image">
+                    <div class="team-info">
+                        <h4>Volunteers</h4>
+                        <p>Community Champions</p>
+                        <span>Dedicated individuals making a difference every day</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="section-container">
+            <h2>Join Our Movement</h2>
+            <p>Together, we can create a healthier future for Nigeria. Support our mission through donation or volunteering.</p>
+            <div class="cta-buttons">
+                <a href="donate.html" class="btn btn-white">Donate Now</a>
+                <a href="volunteer.html" class="btn btn-white">Become a Volunteer</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>TOHAI</h3>
+                    <p>Tochi Health Access Initiative is committed to reducing the burden of sickle cell disease through education, screening, and advocacy.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Twitter">X</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+			<li><a href="impact.html">Impact</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="contact.html">Partner With Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@tohai.org">info@tohai.org</a></li>
+                        <li><a href="tel:+234">+234 XXX XXX XXXX</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tochi Health Access Initiative (TOHAI). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function toggleMenu() {
+            mobileMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            
+            // Toggle button icon
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenuBtn.textContent = '✕';
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenuBtn.textContent = '☰';
+                document.body.style.overflow = '';
+            }
+        }
+        
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+        
+        // Close menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
