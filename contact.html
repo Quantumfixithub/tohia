@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact TOHAI - Tochi Health Access Initiative. Get in touch for inquiries, partnerships, volunteer opportunities, or to learn more about our programs.">
-    <meta name="keywords" content="contact TOHAI, get in touch, partnership, volunteer, donate, sickle cell, Nigeria">
+    <meta name="description" content="Contact TOHAI for partnerships, volunteer opportunities, or general inquiries. Offices in Abuja, Nigeria and Hull, United Kingdom.">
+    <meta name="keywords" content="contact, TOHAI, Abuja, Nigeria, Hull, UK, email, phone, partnerships">
     <meta name="author" content="Tochi Health Access Initiative">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Contact Us - TOHAI">
-    <meta property="og:description" content="Get in touch with TOHAI for inquiries, partnerships, and volunteer opportunities">
+    <meta property="og:description" content="Get in touch with TOHAI for partnerships, volunteer opportunities, or inquiries about our sickle cell prevention work.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tohai.org/contact.html">
     
@@ -56,23 +56,12 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(248, 244, 241, 0.95);
+            background: rgba(248, 244, 241, 0.98);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 5%;
             border-bottom: 2px solid var(--primary-red);
-            animation: slideDown 0.6s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .nav-container {
@@ -211,7 +200,7 @@
         .page-header {
             margin-top: 80px;
             padding: 6rem 5% 4rem;
-            background: linear-gradient(135deg, var(--accent-green) 0%, #04A07C 100%);
+            background: linear-gradient(135deg, var(--primary-red) 0%, #C62936 100%);
             color: white;
             text-align: center;
             position: relative;
@@ -219,7 +208,7 @@
         }
 
         .page-header::before {
-            content: '✉️';
+            content: '📧';
             position: absolute;
             font-size: clamp(10rem, 20vw, 20rem);
             opacity: 0.05;
@@ -240,87 +229,62 @@
             font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 800;
             margin-bottom: 1.5rem;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .page-header p {
             font-size: clamp(1rem, 2.5vw, 1.3rem);
             line-height: 1.8;
             opacity: 0.95;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
-        /* Contact Section */
-        .contact-section {
+        /* Contact Info Section */
+        .contact-info {
             padding: 6rem 5%;
             background: white;
         }
 
         .section-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .contact-wrapper {
+        .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: 2.5rem;
             margin-top: 3rem;
-        }
-
-        /* Contact Info Cards */
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
         }
 
         .info-card {
             background: var(--warm-cream);
-            padding: 2.5rem;
+            padding: 2.5rem 2rem;
             border-radius: 20px;
+            border-top: 4px solid var(--accent-green);
             transition: all 0.3s ease;
         }
 
         .info-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
         .info-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary-red);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: clamp(2.5rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            display: block;
         }
 
         .info-card h3 {
             font-family: 'Sora', sans-serif;
-            font-size: clamp(1.2rem, 3vw, 1.4rem);
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
             color: var(--primary-blue);
             margin-bottom: 1rem;
         }
 
         .info-card p {
             color: #4A5568;
-            line-height: 1.8;
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
             font-size: clamp(0.95rem, 2vw, 1.05rem);
         }
 
@@ -335,173 +299,59 @@
             color: var(--primary-blue);
         }
 
-        /* Contact Form */
-        .contact-form {
-            background: var(--warm-cream);
-            padding: 3rem;
-            border-radius: 25px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .form-header {
-            margin-bottom: 2rem;
-        }
-
-        .form-header h2 {
-            font-family: 'Sora', sans-serif;
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-        }
-
-        .form-header p {
-            color: #4A5568;
-            font-size: clamp(0.9rem, 2vw, 1rem);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-            font-size: clamp(0.9rem, 2vw, 1rem);
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 1rem 1.5rem;
-            border: 2px solid transparent;
-            border-radius: 12px;
-            background: white;
-            font-family: 'DM Sans', sans-serif;
-            font-size: clamp(0.9rem, 2vw, 1rem);
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--primary-red);
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: clamp(0.9rem, 2vw, 1.05rem);
-            transition: all 0.3s ease;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background: var(--primary-red);
-            color: white;
-            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.3);
-            width: 100%;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
-        }
-
-        /* Social Media Section */
-        .social-section {
+        /* Office Addresses Section */
+        .offices-section {
             padding: 6rem 5%;
-            background: var(--primary-blue);
-            color: white;
-            text-align: center;
+            background: var(--warm-cream);
         }
 
-        .section-header {
-            margin-bottom: 3rem;
-        }
-
-        .section-title {
-            font-family: 'Sora', sans-serif;
-            font-size: clamp(1.8rem, 5vw, 3rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .section-description {
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            opacity: 0.95;
-        }
-
-        .social-grid {
+        .offices-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+            gap: 3rem;
             margin-top: 3rem;
         }
 
-        .social-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: clamp(2rem, 4vw, 3rem);
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: white;
-            display: block;
+        .office-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 25px;
+            border-left: 6px solid var(--primary-red);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .social-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-8px);
-        }
-
-        .social-icon {
-            font-size: clamp(2.5rem, 6vw, 3.5rem);
+        .office-flag {
+            font-size: 3rem;
             margin-bottom: 1.5rem;
             display: block;
         }
 
-        .social-card h3 {
+        .office-card h3 {
             font-family: 'Sora', sans-serif;
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .office-details {
+            color: #4A5568;
+            line-height: 1.8;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+        }
+
+        .office-details p {
             margin-bottom: 0.5rem;
         }
 
-        .social-card p {
-            opacity: 0.95;
-            font-size: clamp(0.9rem, 2vw, 1rem);
-        }
-
-        /* Map Section */
-        .map-section {
+        /* Contact Form Section */
+        .form-section {
             padding: 6rem 5%;
-            background: var(--warm-cream);
+            background: white;
         }
 
-        .map-container {
-            max-width: 1200px;
-            margin: 3rem auto 0;
-            background: white;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #4A5568;
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
         .section-label {
@@ -515,6 +365,133 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--warm-cream);
+            padding: 3rem;
+            border-radius: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-blue);
+            font-size: clamp(0.95rem, 2vw, 1rem);
+        }
+
+        .required {
+            color: var(--primary-red);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #E2E8F0;
+            border-radius: 12px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: clamp(0.95rem, 2vw, 1rem);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.3);
+        }
+
+        .submit-btn:hover {
+            background: #C62936;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+        }
+
+        /* Social Connect Section */
+        .social-section {
+            padding: 6rem 5%;
+            background: var(--primary-blue);
+            color: white;
+            text-align: center;
+        }
+
+        .social-links-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .social-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            min-width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .social-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .social-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-card h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            margin-bottom: 1rem;
+        }
+
+        .social-card a {
+            color: var(--accent-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .social-card a:hover {
+            color: white;
         }
 
         /* Footer */
@@ -548,6 +525,7 @@
             color: #A0AEC0;
             line-height: 1.8;
             font-size: clamp(0.9rem, 2vw, 1rem);
+            margin-bottom: 1rem;
         }
 
         .footer-links h4 {
@@ -611,17 +589,6 @@
         }
 
         /* Responsive */
-        @media (max-width: 1024px) {
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .contact-section, .social-section, .map-section {
-                padding: 4rem 3%;
-            }
-        }
-
         @media (max-width: 768px) {
             .nav-links,
             .nav-cta {
@@ -637,16 +604,12 @@
                 padding: 4rem 5% 3rem;
             }
 
-            .contact-section, .social-section, .map-section {
-                padding: 3rem 5%;
+            .contact-info, .offices-section, .form-section, .social-section {
+                padding: 4rem 5%;
             }
 
             .contact-form {
                 padding: 2rem;
-            }
-
-            .map-container {
-                height: 350px;
             }
         }
 
@@ -654,17 +617,9 @@
             .logo {
                 font-size: 1.5rem;
             }
-
-            .info-card {
-                padding: 2rem;
-            }
-
-            .info-card:hover {
-                transform: translateX(5px);
-            }
         }
 
-        /* Accessibility improvements */
+        /* Accessibility */
         @media (prefers-reduced-motion: reduce) {
             *,
             *::before,
@@ -675,32 +630,13 @@
             }
         }
 
-        /* Focus styles for accessibility */
         a:focus,
         button:focus,
         input:focus,
-        textarea:focus,
-        select:focus {
+        select:focus,
+        textarea:focus {
             outline: 3px solid var(--primary-red);
             outline-offset: 2px;
-        }
-
-        /* Print styles */
-        @media print {
-            nav,
-            .social-section,
-            .map-section,
-            footer {
-                display: none;
-            }
-
-            body {
-                background: white;
-            }
-
-            .page-header {
-                margin-top: 0;
-            }
         }
     </style>
 </head>
@@ -712,8 +648,10 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="programs.html">Programs</a></li>
-		<li><a href="impact.html">Impact</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="partners.html">Partners</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
@@ -728,8 +666,10 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="programs.html">Programs</a></li>
-	    <li><a href="impact.html">Impact</a></li>
+            <li><a href="programmes.html">Programmes</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="get-involved.html">Get Involved</a></li>
+            <li><a href="partners.html">Partners</a></li>
             <li><a href="resources.html">Resources</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -739,121 +679,147 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="page-header-content">
-            <h1>Get in Touch</h1>
-            <p>Have questions? Want to partner with us? We'd love to hear from you. Reach out and let's create positive change together.</p>
+            <h1>Contact Us</h1>
+            <p>Get in touch with us for partnerships, volunteer opportunities, donations, or general inquiries. We'd love to hear from you.</p>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
+    <!-- Contact Information -->
+    <section class="contact-info">
         <div class="section-container">
-            <div class="contact-wrapper">
-                <!-- Contact Information -->
-                <div class="contact-info">
-                    <div class="info-card">
-                        <div class="info-icon" role="img" aria-label="Email icon">📧</div>
-                        <h3>Email Us</h3>
-                        <p>For general inquiries, partnerships, or program information</p>
-                        <a href="mailto:info@tohai.org">info@tohai.org</a>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon" role="img" aria-label="Phone icon">📞</div>
-                        <h3>Call Us</h3>
-                        <p>Speak with our team Monday to Friday, 9AM - 5PM WAT</p>
-                        <a href="tel:+234">+234 XXX XXX XXXX</a>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon" role="img" aria-label="Location icon">📍</div>
-                        <h3>Office Address</h3>
-                        <p>Abuja, Federal Capital Territory<br>Nigeria</p>
-                    </div>
+            <div class="contact-grid">
+                <div class="info-card">
+                    <span class="info-icon" role="img" aria-label="Email icon">📧</span>
+                    <h3>Email Us</h3>
+                    <p><a href="mailto:info@tohai.org">info@tohai.org</a></p>
+                    <p style="margin-top: 1rem; font-size: 0.95rem;">We aim to respond within 48 hours</p>
                 </div>
-
-                <!-- Contact Form -->
-                <div class="contact-form">
-                    <div class="form-header">
-                        <h2>Send Us a Message</h2>
-                        <p>Fill out the form below and we'll get back to you within 24-48 hours.</p>
-                    </div>
-                    <form action="#" method="POST" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required aria-required="true">
-                                <option value="">Select a subject...</option>
-                                <option value="general">General Inquiry</option>
-                                <option value="volunteer">Become a Volunteer</option>
-				<option value="volunteer">Join Outreach Team</option>
-                                <option value="donation">Donation & Sponsorship</option>
-                                <option value="partnership">Partnership Inquiry</option>
-                                <option value="screening">Screening Information</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" required aria-required="true"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+                <div class="info-card">
+                    <span class="info-icon" role="img" aria-label="Phone icon">📞</span>
+                    <h3>Call Us</h3>
+                    <p><a href="tel:+2347063323678">+234 706 332 3678</a></p>
+                    <p style="margin-top: 1rem; font-size: 0.95rem;">Monday - Friday, 9AM - 5PM WAT</p>
+                </div>
+                <div class="info-card">
+                    <span class="info-icon" role="img" aria-label="Location icon">📍</span>
+                    <h3>Visit Us</h3>
+                    <p>Abuja, Nigeria</p>
+                    <p>Hull, United Kingdom</p>
+                    <p style="margin-top: 1rem; font-size: 0.95rem;">See office details below</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Media Section -->
+    <!-- Office Addresses -->
+    <section class="offices-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Our Offices</span>
+                <h2 class="section-title">Where to Find Us</h2>
+            </div>
+            <div class="offices-grid">
+                <div class="office-card">
+                    <span class="office-flag" role="img" aria-label="Nigeria flag">🇳🇬</span>
+                    <h3>Nigeria Head Office</h3>
+                    <div class="office-details">
+                        <p><strong>Pius B Abang Close,</strong></p>
+                        <p>Asokoro Extension,</p>
+                        <p>Asokoro, Abuja,</p>
+                        <p>Nigeria</p>
+                        <p style="margin-top: 1.5rem;">
+                            <strong>Phone:</strong> <a href="tel:+2347063323678">+234 706 332 3678</a><br>
+                            <strong>Email:</strong> <a href="mailto:info@tohai.org">info@tohai.org</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="office-card">
+                    <span class="office-flag" role="img" aria-label="UK flag">🇬🇧</span>
+                    <h3>United Kingdom Office</h3>
+                    <div class="office-details">
+                        <p><strong>439 Beverley Road,</strong></p>
+                        <p>Hull, HU5 1NR,</p>
+                        <p>England,</p>
+                        <p>United Kingdom</p>
+                        <p style="margin-top: 1.5rem;">
+                            <strong>Email:</strong> <a href="mailto:info@tohai.org">info@tohai.org</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="form-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Send a Message</span>
+                <h2 class="section-title">Get in Touch</h2>
+            </div>
+            <form class="contact-form" id="contactForm" action="submit.php" method="post">
+
+                <div class="form-group">
+                    <label for="name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject <span class="required">*</span></label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="partnership">Partnership Inquiry</option>
+                        <option value="volunteer">Volunteer Application</option>
+                        <option value="donation">Donation Inquiry</option>
+                        <option value="media">Media/Press Inquiry</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message <span class="required">*</span></label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Social Connect -->
     <section class="social-section">
         <div class="section-container">
             <div class="section-header">
-                <h2 class="section-title">Connect With Us</h2>
-                <p class="section-description">Follow our journey and stay updated on our programs, events, and impact stories</p>
+                <span class="section-label" style="background: rgba(255,255,255,0.2); color: white;">Connect</span>
+                <h2 class="section-title" style="color: white;">Follow Us on Social Media</h2>
             </div>
-            <div class="social-grid">
-                <a href="#" class="social-card" aria-label="Follow us on Facebook">
-                    <span class="social-icon" role="img" aria-label="Facebook icon">📘</span>
-                    <h3>Facebook</h3>
-                    <p>Follow us for updates and community stories</p>
-                </a>
-                <a href="#" class="social-card" aria-label="Follow us on Instagram">
-                    <span class="social-icon" role="img" aria-label="Instagram icon">📷</span>
-                    <h3>Instagram</h3>
-                    <p>See our programs in action through photos and videos</p>
-                </a>
-                <a href="#" class="social-card" aria-label="Follow us on Twitter">
-                    <span class="social-icon" role="img" aria-label="Twitter icon">🐦</span>
-                    <h3>X (Twitter)</h3>
-                    <p>Get real-time updates and health education tips</p>
-                </a>
-                <a href="#" class="social-card" aria-label="Connect with us on LinkedIn">
-                    <span class="social-icon" role="img" aria-label="LinkedIn icon">💼</span>
-                    <h3>LinkedIn</h3>
-                    <p>Connect professionally and explore partnerships</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section class="map-section">
-        <div class="section-container">
-            <div class="section-header" style="text-align: center;">
-                <span class="section-label">Location</span>
-                <h2 style="font-family: 'Sora', sans-serif; font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 800; color: var(--primary-blue); margin-bottom: 1rem;">Visit Our Office</h2>
-                <p style="font-size: clamp(1rem, 2vw, 1.15rem); color: #4A5568;">We're located in Abuja, Nigeria. Schedule a visit to learn more about our work.</p>
-            </div>
-            <div class="map-container">
-                <p style="font-size: clamp(1rem, 2vw, 1.2rem);">📍 Interactive Map Coming Soon</p>
+            <div class="social-links-grid">
+                <div class="social-card">
+                    <div class="social-icon">📘</div>
+                    <h4>Facebook</h4>
+                    <a href="#">@TOHAI</a>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">📷</div>
+                    <h4>Instagram</h4>
+                    <a href="#">@TOHAI</a>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">𝕏</div>
+                    <h4>Twitter/X</h4>
+                    <a href="#">@TOHAI</a>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">💼</div>
+                    <h4>LinkedIn</h4>
+                    <a href="#">TOHAI</a>
+                </div>
             </div>
         </div>
     </section>
@@ -864,7 +830,13 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h3>TOHAI</h3>
-                    <p>Tochi Health Access Initiative is committed to reducing the burden of sickle cell disease through education, screening, and advocacy.</p>
+                    <p>Tochi Health Access Initiative is a Nigerian non-profit public health organisation committed to preventing sickle cell disease through education, screening, and advocacy.</p>
+                    <p style="margin-top: 1rem;"><strong>Nigeria Office:</strong><br>
+                    Pius B Abang Close, Asokoro Extension,<br>
+                    Asokoro, Abuja, Nigeria</p>
+                    <p style="margin-top: 0.5rem;"><strong>UK Office:</strong><br>
+                    439 Beverley Road,<br>
+                    Hull, HU5 1NR, England, UK</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook">f</a>
                         <a href="#" class="social-link" aria-label="Instagram">📷</a>
@@ -877,25 +849,26 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="programs.html">Programs</a></li>
-			<li><a href="impact.html">Impact</a></li>
-                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="programmes.html">Programmes</a></li>
+                        <li><a href="impact.html">Impact</a></li>
+                        <li><a href="partners.html">Partners</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Get Involved</h4>
                     <ul>
                         <li><a href="donate.html">Donate</a></li>
-                        <li><a href="volunteer.html">Volunteer</a></li>
-                        <li><a href="contact.html">Partner With Us</a></li>
+                        <li><a href="get-involved.html">Volunteer</a></li>
+                        <li><a href="partners.html">Partner With Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="mailto:info@tohai.org">info@tohai.org</a></li>
-                        <li><a href="tel:+234">+234 XXX XXX XXXX</a></li>
-                        <li><a href="contact.html">Contact Form</a></li>
+                        <li><a href="tel:+2347063323678">+234 706 332 3678</a></li>
+                        <li><a href="resources.html">Resources</a></li>
                     </ul>
                 </div>
             </div>
@@ -905,7 +878,7 @@
         </div>
     </footer>
 
-    <!-- Mobile Menu & Form JavaScript -->
+    <!-- JavaScript -->
     <script>
         // Mobile menu functionality
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -916,7 +889,6 @@
             mobileMenu.classList.toggle('active');
             menuOverlay.classList.toggle('active');
             
-            // Toggle button icon
             if (mobileMenu.classList.contains('active')) {
                 mobileMenuBtn.textContent = '✕';
                 document.body.style.overflow = 'hidden';
@@ -929,7 +901,6 @@
         mobileMenuBtn.addEventListener('click', toggleMenu);
         menuOverlay.addEventListener('click', toggleMenu);
         
-        // Close menu when clicking on a link
         const mobileMenuLinks = mobileMenu.querySelectorAll('a');
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -939,7 +910,6 @@
             });
         });
         
-        // Close menu on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
                 toggleMenu();
@@ -953,16 +923,19 @@
             
             // Get form data
             const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
             
-            // Here you would typically send the data to a server
-            // For now, we'll just show a success message
-            alert('Thank you for your message! We will get back to you within 24-48 hours.');
+            // In production, this would send to a backend
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert('Thank you for your message! We will get back to you within 48 hours.');
             
             // Reset form
             contactForm.reset();
         });
 
-        // Smooth scroll for anchor links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();

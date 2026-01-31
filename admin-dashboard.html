@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin Dashboard - TOHAI</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-red: #E63946;
+            --primary-blue: #1D3557;
+            --accent-green: #06D6A0;
+            --warm-cream: #F8F4F1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--warm-cream);
+        }
+
+        /* Header */
+        .admin-header {
+            background: white;
+            padding: 1.5rem 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-red);
+        }
+
+        .admin-info {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .admin-user {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .logout-btn {
+            padding: 0.7rem 1.5rem;
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: #C62936;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .admin-container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 5%;
+        }
+
+        .welcome-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0F2642 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+        }
+
+        .welcome-section h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Dashboard Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--accent-green);
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-label {
+            color: #718096;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .quick-actions h2 {
+            font-family: 'Sora', sans-serif;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .action-btn {
+            padding: 1.5rem;
+            background: var(--warm-cream);
+            border: 2px solid transparent;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+            display: block;
+        }
+
+        .action-btn:hover {
+            border-color: var(--primary-red);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .action-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Recent Activity */
+        .recent-activity {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .recent-activity h2 {
+            font-family: 'Sora', sans-serif;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .activity-list {
+            list-style: none;
+        }
+
+        .activity-item {
+            padding: 1rem;
+            border-bottom: 1px solid #E2E8F0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-time {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        /* Content Management Section */
+        .content-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-top: 2rem;
+        }
+
+        .content-section h2 {
+            font-family: 'Sora', sans-serif;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .page-list {
+            list-style: none;
+        }
+
+        .page-item {
+            padding: 1rem;
+            border: 1px solid #E2E8F0;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .page-title {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .page-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-edit {
+            background: var(--accent-green);
+            color: white;
+        }
+
+        .btn-view {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .btn-edit:hover, .btn-view:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .admin-header {
+                padding: 1rem 5%;
+            }
+
+            .welcome-section h1 {
+                font-size: 2rem;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .actions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="admin-header">
+        <div class="logo">TOHAI Admin</div>
+        <div class="admin-info">
+            <span class="admin-user">👤 <span id="adminUsername">Admin</span></span>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="admin-container">
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <h1>Welcome to Admin Dashboard</h1>
+            <p>Manage your TOHAI website content and settings</p>
+        </div>
+
+        <!-- Dashboard Stats -->
+        <div class="dashboard-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📄</div>
+                <div class="stat-label">Total Pages</div>
+                <div class="stat-value">10</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-label">Site Visitors (Demo)</div>
+                <div class="stat-value">2,547</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📧</div>
+                <div class="stat-label">Contact Forms (Demo)</div>
+                <div class="stat-value">48</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="stat-label">Donations (Demo)</div>
+                <div class="stat-value">₦1.2M</div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="actions-grid">
+                <a href="index.html" target="_blank" class="action-btn">
+                    <span class="action-icon">🏠</span>
+                    View Website
+                </a>
+                <a href="#pages" class="action-btn">
+                    <span class="action-icon">✏️</span>
+                    Edit Pages
+                </a>
+                <a href="#" class="action-btn">
+                    <span class="action-icon">📊</span>
+                    View Analytics
+                </a>
+                <a href="#" class="action-btn">
+                    <span class="action-icon">⚙️</span>
+                    Settings
+                </a>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="recent-activity">
+            <h2>Recent Activity</h2>
+            <ul class="activity-list">
+                <li class="activity-item">
+                    <span>Website login</span>
+                    <span class="activity-time" id="loginTime">Just now</span>
+                </li>
+                <li class="activity-item">
+                    <span>Homepage updated (Demo)</span>
+                    <span class="activity-time">2 hours ago</span>
+                </li>
+                <li class="activity-item">
+                    <span>New donation received (Demo)</span>
+                    <span class="activity-time">5 hours ago</span>
+                </li>
+                <li class="activity-item">
+                    <span>Contact form submission (Demo)</span>
+                    <span class="activity-time">1 day ago</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Content Management -->
+        <div class="content-section" id="pages">
+            <h2>Website Pages</h2>
+            <ul class="page-list">
+                <li class="page-item">
+                    <span class="page-title">🏠 Homepage (index.html)</span>
+                    <div class="page-actions">
+                        <button class="btn-small btn-edit" onclick="editPage('index.html')">Edit</button>
+                        <a href="index.html" target="_blank" class="btn-small btn-view">View</a>
+                    </div>
+                </li>
+                <li class="page-item">
+                    <span class="page-title">ℹ️ About Us (about.html)</span>
+                    <div class="page-actions">
+                        <button class="btn-small btn-edit" onclick="editPage('about.html')">Edit</button>
+                        <a href="about.html" target="_blank" class="btn-small btn-view">View</a>
+                    </div>
+                </li>
+                <li class="page-item">
+                    <span class="page-title">📋 Programmes (programmes.html)</span>
+                    <div class="page-actions">
+                        <button class="btn-small btn-edit" onclick="editPage('programmes.html')">Edit</button>
+                        <a href="programmes.html" target="_blank" class="btn-small btn-view">View</a>
+                    </div>
+                </li>
+                <li class="page-item">
+                    <span class="page-title">📊 Impact (impact.html)</span>
+                    <div class="page-actions">
+                        <button class="btn-small btn-edit" onclick="editPage('impact.html')">Edit</button>
+                        <a href="impact.html" target="_blank" class="btn-small btn-view">View</a>
+                    </div>
+                </li>
+                <li class="page-item">
+                    <span class="page-title">🤝 Get Involved (get-involved.html)</span>
+                    <div class="page-actions">
+                        <button class="btn-small btn-edit" onclick="editPage('get-involved.html')">Edit</button>
+                        <a href="get-involved.html" target="_blank" class="btn-small btn-view">View</a>
+                    </div>
+                </li>
+                <li class="page-item">
+                    <span class="page-title">🤝 Partners (partners.html)</span>
+                    <div class="page-actions">
+                        <button class="btn-small btn-edit" onclick="editPage('partners.html')">Edit</button>
+                        <a href="partners.html" target="_blank" class="btn-small btn-view">View</a>
+                    </div>
+                </li>
+                <li class="page-item">
+                    <span class="page-title">📞 Contact (contact.html)</span>
+                    <div class="page-actions">
+                        <button class="btn-small btn-edit" onclick="editPage('contact.html')">Edit</button>
+                        <a href="contact.html" target="_blank" class="btn-small btn-view">View</a>
+                    </div>
+                </li>
+                <li class="page-item">
+                    <span class="page-title">💰 Donate (donate.html)</span>
+                    <div class="page-actions">
+                        <button class="btn-small btn-edit" onclick="editPage('donate.html')">Edit</button>
+                        <a href="donate.html" target="_blank" class="btn-small btn-view">View</a>
+                    </div>
+                </li>
+                <li class="page-item">
+                    <span class="page-title">📚 Resources (resources.html)</span>
+                    <div class="page-actions">
+                        <button class="btn-small btn-edit" onclick="editPage('resources.html')">Edit</button>
+                        <a href="resources.html" target="_blank" class="btn-small btn-view">View</a>
+                    </div>
+                </li>
+                <li class="page-item">
+                    <span class="page-title">📢 Advocacy (advocacy.html)</span>
+                    <div class="page-actions">
+                        <button class="btn-small btn-edit" onclick="editPage('advocacy.html')">Edit</button>
+                        <a href="advocacy.html" target="_blank" class="btn-small btn-view">View</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Check authentication
+        function checkAuth() {
+            const isAuth = sessionStorage.getItem('tohaiAdminAuth');
+            const username = sessionStorage.getItem('tohaiAdminUser');
+            
+            if (isAuth !== 'true') {
+                window.location.href = 'admin-login.html';
+                return false;
+            }
+            
+            // Display username
+            if (username) {
+                document.getElementById('adminUsername').textContent = username;
+            }
+            
+            // Update login time
+            const loginTime = sessionStorage.getItem('tohaiAdminLoginTime');
+            if (loginTime) {
+                const timeAgo = getTimeAgo(new Date(parseInt(loginTime)));
+                document.getElementById('loginTime').textContent = timeAgo;
+            }
+            
+            return true;
+        }
+
+        // Get time ago
+        function getTimeAgo(date) {
+            const seconds = Math.floor((new Date() - date) / 1000);
+            
+            if (seconds < 60) return 'Just now';
+            if (seconds < 3600) return Math.floor(seconds / 60) + ' minutes ago';
+            if (seconds < 86400) return Math.floor(seconds / 3600) + ' hours ago';
+            return Math.floor(seconds / 86400) + ' days ago';
+        }
+
+        // Logout function
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                sessionStorage.removeItem('tohaiAdminAuth');
+                sessionStorage.removeItem('tohaiAdminUser');
+                sessionStorage.removeItem('tohaiAdminLoginTime');
+                window.location.href = 'admin-login.html';
+            }
+        }
+
+        // Edit page function
+        function editPage(page) {
+            alert('Page editing would be implemented with a CMS or file editor.\n\nFor now, you can edit the HTML files directly in your code editor.\n\nPage: ' + page);
+        }
+
+        // Run auth check on page load
+        checkAuth();
+        
+        // Auto-logout after 2 hours of inactivity
+        let inactivityTime = function () {
+            let time;
+            
+            // Reset timer on activity
+            window.onload = resetTimer;
+            document.onmousemove = resetTimer;
+            document.onkeypress = resetTimer;
+            document.onclick = resetTimer;
+            document.onscroll = resetTimer;
+            
+            function resetTimer() {
+                clearTimeout(time);
+                time = setTimeout(logout, 2 * 60 * 60 * 1000); // 2 hours
+            }
+        };
+        
+        inactivityTime();
+    </script>
+</body>
+</html>

@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Your gift can prevent a lifetime of suffering. Support TOHAI's work in sickle cell disease prevention through genotype education and screening in Nigeria.">
-    <meta name="keywords" content="donate, support, TOHAI, sickle cell, prevention, Nigeria, contribution, impact">
+    <meta name="description" content="TOHAI advocates for universal newborn screening and policy reform to integrate sickle cell prevention into Nigeria's healthcare system.">
+    <meta name="keywords" content="advocacy, policy, newborn screening, healthcare reform, sickle cell, Nigeria, government">
     <meta name="author" content="Tochi Health Access Initiative">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Donate - TOHAI | Your Gift Prevents Suffering">
-    <meta property="og:description" content="Every donation helps prevent sickle cell disease through education, screening, and early intervention in Nigeria.">
+    <meta property="og:title" content="Advocacy - TOHAI">
+    <meta property="og:description" content="Driving policy change for universal newborn screening and sustainable sickle cell prevention systems in Nigeria.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tohai.org/donate.html">
+    <meta property="og:url" content="https://tohai.org/advocacy.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     
-    <title>Donate - TOHAI | Prevent Suffering Before It Starts</title>
+    <title>Advocacy - TOHAI | Driving Policy Change for Lasting Impact</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -196,91 +196,71 @@
             display: block;
         }
 
-        /* Hero Section - Emotional Hook */
-        .hero {
+        /* Page Header with Hero Image */
+        .page-header {
             margin-top: 80px;
-            padding: 6rem 5% 4rem;
-            background: linear-gradient(135deg, var(--primary-red) 0%, #C62936 100%);
-            color: white;
-            text-align: center;
+            padding: 0;
             position: relative;
             overflow: hidden;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .hero::before {
-            content: '💝';
+        .page-header::before {
+            content: '';
             position: absolute;
-            font-size: clamp(10rem, 20vw, 20rem);
-            opacity: 0.05;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(29, 53, 87, 0.9) 0%, rgba(15, 38, 66, 0.9) 100%);
             z-index: 1;
         }
 
-        .hero h1 {
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .page-header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem 5%;
+            color: white;
+        }
+
+        .page-header h1 {
             font-family: 'Sora', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 800;
             margin-bottom: 1.5rem;
-            line-height: 1.1;
         }
 
-        .hero p {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+        .page-header p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
             line-height: 1.8;
             opacity: 0.95;
-            margin-bottom: 1rem;
         }
 
-        /* The Reality Section */
-        .reality-section {
-            padding: 6rem 5%;
-            background: white;
-        }
-
+        /* Main Content */
         .section-container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .reality-box {
-            background: var(--warm-cream);
-            padding: 3rem;
-            border-radius: 25px;
-            border-left: 6px solid var(--primary-red);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .reality-box p {
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-            color: #4A5568;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .reality-box .emphasis {
-            color: var(--primary-blue);
-            font-weight: 700;
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-        }
-
-        /* Impact Anchors Section */
-        .impact-anchors {
-            padding: 6rem 5%;
-            background: var(--warm-cream);
-        }
-
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .section-label {
@@ -301,248 +281,359 @@
             font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 800;
             color: var(--primary-blue);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .impact-grid {
+        .section-description {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #4A5568;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Why Policy Section */
+        .why-policy {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .policy-hero {
+            max-width: 1000px;
+            margin: 0 auto 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .policy-hero img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .policy-statement {
+            background: var(--warm-cream);
+            padding: 3rem;
+            border-radius: 25px;
+            border-left: 6px solid var(--primary-red);
+            max-width: 900px;
+            margin: 3rem auto;
+        }
+
+        .policy-statement p {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--primary-blue);
+            font-weight: 600;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        /* Advocacy Priorities */
+        .priorities-section {
+            padding: 6rem 5%;
+            background: var(--warm-cream);
+        }
+
+        .priorities-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
 
-        .impact-card {
+        .priority-card {
             background: white;
-            padding: 3rem 2.5rem;
             border-radius: 25px;
-            border-top: 5px solid var(--accent-green);
+            overflow: hidden;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
-            cursor: pointer;
         }
 
-        .impact-card:hover {
+        .priority-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-            border-top-color: var(--primary-red);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
         }
 
-        .amount {
-            font-family: 'Sora', sans-serif;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: 800;
-            color: var(--primary-red);
-            margin-bottom: 1rem;
+        .priority-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
 
-        .impact-description {
-            font-size: clamp(1rem, 2vw, 1.15rem);
-            color: var(--primary-blue);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            line-height: 1.6;
+        .priority-content {
+            padding: 2.5rem 2rem;
+            border-top: 5px solid var(--accent-green);
         }
 
-        .impact-details {
-            color: #4A5568;
-            line-height: 1.7;
-            font-size: clamp(0.95rem, 2vw, 1rem);
-        }
-
-        /* Why Give Now */
-        .urgency-section {
-            padding: 6rem 5%;
-            background: var(--primary-blue);
-            color: white;
-        }
-
-        .urgency-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .urgency-content h2 {
-            font-family: 'Sora', sans-serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-            margin-bottom: 2rem;
-        }
-
-        .urgency-content p {
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-            line-height: 1.8;
-            opacity: 0.95;
-            margin-bottom: 1.5rem;
-        }
-
-        .urgency-highlight {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-            font-weight: 600;
-        }
-
-        /* Trust & Credibility */
-        .trust-section {
-            padding: 6rem 5%;
-            background: white;
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .trust-card {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .trust-icon {
+        .priority-icon {
             font-size: clamp(3rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .priority-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 1.6rem);
+            color: var(--primary-blue);
             margin-bottom: 1rem;
         }
 
-        .trust-card h4 {
-            font-family: 'Sora', sans-serif;
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-            color: var(--primary-blue);
-            margin-bottom: 0.8rem;
-        }
-
-        .trust-card p {
+        .priority-card p {
             color: #4A5568;
-            line-height: 1.6;
-            font-size: clamp(0.95rem, 2vw, 1rem);
+            line-height: 1.8;
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
         }
 
-        /* Donation CTA */
-        .donation-cta {
+        /* Our Approach */
+        .approach-section {
             padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--accent-green) 0%, #04A07C 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .donation-cta h2 {
-            font-family: 'Sora', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        .donation-cta p {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1.2rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            transition: all 0.3s ease;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-white {
             background: white;
-            color: var(--primary-red);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
         }
 
-        .btn-white:hover {
-            background: var(--warm-cream);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        .approach-hero {
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
         }
 
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 3px solid white;
+        .approach-hero img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
         }
 
-        .btn-outline:hover {
-            background: white;
-            color: var(--accent-green);
-        }
-
-        /* Other Ways to Give */
-        .other-ways {
-            padding: 6rem 5%;
-            background: var(--warm-cream);
-        }
-
-        .ways-grid {
+        .approach-steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
 
-        .way-card {
-            background: white;
+        .approach-step {
+            background: var(--warm-cream);
             padding: 2.5rem 2rem;
             border-radius: 20px;
             text-align: center;
-            border: 2px solid transparent;
             transition: all 0.3s ease;
         }
 
-        .way-card:hover {
-            border-color: var(--primary-red);
+        .approach-step:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .way-icon {
-            font-size: clamp(2.5rem, 5vw, 3rem);
-            margin-bottom: 1rem;
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
         }
 
-        .way-card h4 {
+        .approach-step h4 {
             font-family: 'Sora', sans-serif;
             font-size: clamp(1.2rem, 3vw, 1.4rem);
             color: var(--primary-blue);
             margin-bottom: 1rem;
         }
 
-        .way-card p {
+        .approach-step p {
             color: #4A5568;
             line-height: 1.7;
-            margin-bottom: 1.5rem;
             font-size: clamp(0.95rem, 2vw, 1rem);
         }
 
-        .way-link {
-            color: var(--primary-red);
-            text-decoration: none;
-            font-weight: 600;
+        /* The Vision */
+        .vision-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--accent-green) 0%, #04A07C 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .way-link:hover {
-            text-decoration: underline;
+        .vision-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .vision-section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .vision-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .vision-content h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+
+        .vision-content p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            line-height: 1.8;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+        }
+
+        .vision-highlight {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Policy Impact */
+        .policy-impact {
+            padding: 6rem 5%;
+            background: var(--warm-cream);
+        }
+
+        .impact-hero {
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .impact-hero img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .impact-stat {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 4px solid var(--primary-red);
+            transition: all 0.3s ease;
+        }
+
+        .impact-stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-icon {
+            font-size: clamp(3rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+        }
+
+        .impact-stat h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            color: var(--primary-blue);
+            margin-bottom: 0.8rem;
+        }
+
+        .impact-stat p {
+            color: #4A5568;
+            line-height: 1.6;
+            font-size: clamp(0.95rem, 2vw, 1rem);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--primary-red) 0%, #C62936 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .cta-section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            margin: 0 0.5rem;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary-red);
+        }
+
+        .btn-white:hover {
+            background: var(--warm-cream);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         /* Footer */
@@ -650,30 +741,30 @@
                 display: block;
             }
 
-            .hero {
+            .page-header {
                 margin-top: 70px;
-                padding: 4rem 5% 3rem;
+                height: 400px;
             }
 
-            .reality-section, .impact-anchors, .urgency-section,
-            .trust-section, .donation-cta, .other-ways {
+            .why-policy, .priorities-section, .approach-section,
+            .vision-section, .policy-impact, .cta-section {
                 padding: 4rem 5%;
             }
 
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .cta-buttons .btn {
-                width: 100%;
-                max-width: 300px;
+            .policy-hero img,
+            .approach-hero img,
+            .impact-hero img {
+                height: 250px;
             }
         }
 
         @media (max-width: 480px) {
             .logo {
                 font-size: 1.5rem;
+            }
+
+            .page-header {
+                height: 350px;
             }
         }
 
@@ -710,7 +801,7 @@
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <a href="donate.html" class="nav-cta active">Donate</a>
+            <a href="donate.html" class="nav-cta">Donate</a>
             <button class="mobile-menu-btn" aria-label="Toggle mobile menu" id="mobileMenuBtn">☰</button>
         </div>
     </nav>
@@ -731,154 +822,180 @@
         <a href="donate.html" class="nav-cta">Donate</a>
     </div>
 
-    <!-- Hero - Emotional Hook -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Your Gift Can Prevent a Lifetime of Suffering</h1>
-            <p>In Nigeria, thousands of children are born every year with sickle cell disease because early screening and education didn't happen in time.</p>
-            <p><strong>Your support changes that.</strong></p>
+    <!-- Page Header with Hero Image -->
+    <section class="page-header">
+        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1600&q=80" alt="Policy advocacy meeting" class="hero-image">
+        <div class="page-header-content">
+            <h1>Advocacy & Policy Reform</h1>
+            <p>Driving policy change for lasting impact. Because sustainable prevention requires systems, not just services.</p>
         </div>
     </section>
 
-    <!-- The Reality -->
-    <section class="reality-section">
-        <div class="section-container">
-            <div class="reality-box">
-                <p>Every 2 minutes, a child is born with sickle cell disease in Nigeria. Many will suffer severe pain, infections, and early death.</p>
-                <p class="emphasis">Most of this is preventable.</p>
-                <p>Your donation helps us stop suffering before it starts.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- What Your Money Does - Impact Anchors -->
-    <section class="impact-anchors">
+    <!-- Why Policy Matters -->
+    <section class="why-policy">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-label">Your Impact</span>
-                <h2 class="section-title">What Your Donation Does</h2>
+                <span class="section-label">Our Approach</span>
+                <h2 class="section-title">Why Policy Matters</h2>
             </div>
+
+            <div class="policy-hero">
+                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80" alt="Government policy documents and planning">
+            </div>
+
+            <div class="policy-statement">
+                <p>Sickle cell disease is not just a medical challenge. It is a public policy issue.</p>
+            </div>
+            <p class="section-description">Community programmes reach thousands. Policy reform reaches millions. At TOHAI, we believe that sustainable change requires embedding early screening and prevention into Nigeria's public healthcare system — not just delivering temporary projects.</p>
+        </div>
+    </section>
+
+    <!-- Advocacy Priorities -->
+    <section class="priorities-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Our Priorities</span>
+                <h2 class="section-title">What We Advocate For</h2>
+            </div>
+            <div class="priorities-grid">
+                <div class="priority-card">
+                    <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80" alt="Newborn healthcare" class="priority-image">
+                    <div class="priority-content">
+                        <span class="priority-icon" role="img" aria-label="Baby icon">👶</span>
+                        <h3>Universal Newborn Screening</h3>
+                        <p>We advocate for mandatory newborn screening for sickle cell disease in all Nigerian states, ensuring early detection and intervention for every child.</p>
+                    </div>
+                </div>
+                <div class="priority-card">
+                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80" alt="Healthcare funding" class="priority-image">
+                    <div class="priority-content">
+                        <span class="priority-icon" role="img" aria-label="Money icon">💰</span>
+                        <h3>Government Funding for Screening</h3>
+                        <p>We push for dedicated public funding to make screening free or affordable for all families, removing financial barriers to early detection.</p>
+                    </div>
+                </div>
+                <div class="priority-card">
+                    <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&q=80" alt="Healthcare facility" class="priority-image">
+                    <div class="priority-content">
+                        <span class="priority-icon" role="img" aria-label="Hospital icon">🏥</span>
+                        <h3>Integration into Primary Healthcare</h3>
+                        <p>We work to embed screening services into Nigeria's primary healthcare system, making prevention a standard part of maternal and child health.</p>
+                    </div>
+                </div>
+                <div class="priority-card">
+                    <img src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?w=800&q=80" alt="Healthcare network" class="priority-image">
+                    <div class="priority-content">
+                        <span class="priority-icon" role="img" aria-label="Network icon">🔗</span>
+                        <h3>National Referral Systems</h3>
+                        <p>We advocate for structured referral networks linking screening to treatment centers, ensuring no child falls through the cracks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="approach-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Strategy</span>
+                <h2 class="section-title">How We Advocate</h2>
+            </div>
+
+            <div class="approach-hero">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&q=80" alt="Strategic planning meeting">
+            </div>
+
+            <div class="approach-steps">
+                <div class="approach-step">
+                    <div class="step-number">1</div>
+                    <h4>Evidence & Research</h4>
+                    <p>We build policy positions grounded in public health research, community data, and international best practices.</p>
+                </div>
+                <div class="approach-step">
+                    <div class="step-number">2</div>
+                    <h4>Stakeholder Engagement</h4>
+                    <p>We collaborate with government agencies, health ministries, civil society, and international partners.</p>
+                </div>
+                <div class="approach-step">
+                    <div class="step-number">3</div>
+                    <h4>Public Awareness</h4>
+                    <p>We mobilize communities and media to build public support for universal screening policies.</p>
+                </div>
+                <div class="approach-step">
+                    <div class="step-number">4</div>
+                    <h4>Policy Development</h4>
+                    <p>We support policymakers in drafting, implementing, and monitoring effective screening frameworks.</p>
+                </div>
+                <div class="approach-step">
+                    <div class="step-number">5</div>
+                    <h4>Accountability</h4>
+                    <p>We track policy implementation and hold institutions accountable to commitments made.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Vision -->
+    <section class="vision-section">
+        <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1600&q=80" alt="Healthcare advocacy" class="vision-bg">
+        <div class="section-container">
+            <div class="vision-content">
+                <h2>Our Policy Goal</h2>
+                <p>TOHAI's ultimate advocacy goal is the national adoption of universal newborn screening for sickle cell disease in Nigeria.</p>
+                <p>We envision a future where every child born in Nigeria is screened within the first days of life — not as a privilege, but as a standard of care.</p>
+                <div class="vision-highlight">
+                    Policy reform is how we move from helping thousands to protecting millions.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact of Policy Change -->
+    <section class="policy-impact">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Potential Impact</span>
+                <h2 class="section-title">What Policy Reform Achieves</h2>
+            </div>
+
+            <div class="impact-hero">
+                <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=1200&q=80" alt="Healthcare policy impact">
+            </div>
+
             <div class="impact-grid">
-                <div class="impact-card">
-                    <div class="amount">₦250,000</div>
-                    <div class="impact-description">Educates 50 Young People</div>
-                    <p class="impact-details">Delivers comprehensive genotype education to 50 young people, equipping them with knowledge for informed decisions.</p>
+                <div class="impact-stat">
+                    <div class="stat-icon">🏥</div>
+                    <h4>Systemic Coverage</h4>
+                    <p>Every newborn, regardless of family income or location, receives screening.</p>
                 </div>
-                <div class="impact-card">
-                    <div class="amount">₦500,000</div>
-                    <div class="impact-description">Screens 20 People</div>
-                    <p class="impact-details">Provides genotype screening for 20 individuals, enabling early detection and prevention planning.</p>
+                <div class="impact-stat">
+                    <div class="stat-icon">💰</div>
+                    <h4>Sustainable Funding</h4>
+                    <p>Government budgets ensure programmes continue beyond donor cycles.</p>
                 </div>
-                <div class="impact-card">
-                    <div class="amount">₦1,000,000</div>
-                    <div class="impact-description">Funds Community Session</div>
-                    <p class="impact-details">Delivers a full community education session reaching hundreds with life-saving information.</p>
+                <div class="impact-stat">
+                    <div class="stat-icon">📉</div>
+                    <h4>Reduced Mortality</h4>
+                    <p>Early diagnosis and treatment drastically lower childhood mortality rates.</p>
                 </div>
-                <div class="impact-card">
-                    <div class="amount">₦2,500,000</div>
-                    <div class="impact-description">Supports Newborn Screening</div>
-                    <p class="impact-details">Funds newborn screening and early referral services for vulnerable communities.</p>
-                </div>
-                <div class="impact-card">
-                    <div class="amount">₦10,000,000</div>
-                    <div class="impact-description">Full Community Outreach</div>
-                    <p class="impact-details">Funds a complete community screening outreach including education, testing, and referrals.</p>
+                <div class="impact-stat">
+                    <div class="stat-icon">🌍</div>
+                    <h4>National Impact</h4>
+                    <p>Policy reaches millions — far beyond what any single organization can achieve.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Give Now - Urgency -->
-    <section class="urgency-section">
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80" alt="Advocacy collaboration" class="cta-bg">
         <div class="section-container">
-            <div class="urgency-content">
-                <h2>Why Give Now</h2>
-                <p>Prevention is time-sensitive. Every month we delay, more children are born without screening. Every day matters.</p>
-                <div class="urgency-highlight">
-                    Your donation directly prevents avoidable illness and death.
-                </div>
-                <p>The families we reach today will carry this knowledge for generations. The children we screen this month will have the early intervention they need to thrive.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust & Credibility -->
-    <section class="trust-section">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">Transparency</span>
-                <h2 class="section-title">Why Trust TOHAI</h2>
-            </div>
-            <div class="trust-grid">
-                <div class="trust-card">
-                    <div class="trust-icon">🏛️</div>
-                    <h4>Registered Non-Profit</h4>
-                    <p>Officially registered Nigerian non-profit organization with legal compliance.</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-icon">💎</div>
-                    <h4>Transparent Finances</h4>
-                    <p>Clear financial management and regular reporting to all stakeholders.</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-icon">👥</div>
-                    <h4>Board Governance</h4>
-                    <p>Board-governed organization with strong oversight and accountability.</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-icon">📊</div>
-                    <h4>Measurable Impact</h4>
-                    <p>We track and report outcomes, showing exactly where your money goes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Donation CTA -->
-    <section class="donation-cta">
-        <div class="section-container">
-            <h2>Give Today. Protect Tomorrow. Save Lives for Generations.</h2>
-            <p>Every contribution — whether ₦5,000 or ₦5,000,000 — makes a tangible difference in preventing sickle cell disease and protecting Nigeria's children.</p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn btn-white">Donate Now</a>
-                <a href="partners.html" class="btn btn-outline">Corporate Partnership</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Other Ways to Give -->
-    <section class="other-ways">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">More Options</span>
-                <h2 class="section-title">Other Ways to Support</h2>
-            </div>
-            <div class="ways-grid">
-                <div class="way-card">
-                    <div class="way-icon">💰</div>
-                    <h4>Monthly Giving</h4>
-                    <p>Join our monthly giving circle and provide sustained support for ongoing programmes.</p>
-                    <a href="contact.html" class="way-link">Learn More →</a>
-                </div>
-                <div class="way-card">
-                    <div class="way-icon">🏢</div>
-                    <h4>Corporate Partnership</h4>
-                    <p>Partner with us through CSR initiatives, matching gifts, or employee engagement programs.</p>
-                    <a href="partners.html" class="way-link">Explore Partnership →</a>
-                </div>
-                <div class="way-card">
-                    <div class="way-icon">🎁</div>
-                    <h4>In-Kind Donations</h4>
-                    <p>Contribute equipment, supplies, or professional services to support our work.</p>
-                    <a href="contact.html" class="way-link">Get in Touch →</a>
-                </div>
-                <div class="way-card">
-                    <div class="way-icon">🏦</div>
-                    <h4>Bank Transfer</h4>
-                    <p>Make a direct bank transfer to our account. Contact us for banking details.</p>
-                    <a href="contact.html" class="way-link">Request Details →</a>
-                </div>
-            </div>
+            <h2>Join the Advocacy Movement</h2>
+            <p>Support our policy work through partnerships, donations, or by amplifying our advocacy efforts in your networks.</p>
+            <a href="partners.html" class="btn btn-white">Partner With Us</a>
+            <a href="donate.html" class="btn btn-white">Support Our Work</a>
         </div>
     </section>
 

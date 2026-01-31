@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="View TOHAI's past programs, events, and community impact through our photo gallery. See our work in education, screening, and advocacy across Nigeria.">
-    <meta name="keywords" content="TOHAI impact, past programs, events, sickle cell awareness, community outreach, Nigeria">
+    <meta name="description" content="TOHAI measures success by lives reached, systems strengthened, and futures changed through genotype education and sickle cell disease prevention in Nigeria.">
+    <meta name="keywords" content="TOHAI, impact, results, outcomes, sickle cell, prevention, Nigeria, achievements">
     <meta name="author" content="Tochi Health Access Initiative">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Impact - TOHAI Past Programs & Events">
-    <meta property="og:description" content="Explore our Impact in making a difference through education, screening, and advocacy">
+    <meta property="og:title" content="Our Impact - TOHAI">
+    <meta property="og:description" content="Measuring success by lives protected through genotype education, screening, and advocacy across Nigeria.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tohai.org/impact.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     
-    <title>Gallery - TOHAI | Past Programs & Events</title>
+    <title>Our Impact - TOHAI | Lives Protected, Futures Changed</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,23 +56,12 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(248, 244, 241, 0.95);
+            background: rgba(248, 244, 241, 0.98);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 5%;
             border-bottom: 2px solid var(--primary-red);
-            animation: slideDown 0.6s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .nav-container {
@@ -212,7 +201,7 @@
             margin-top: 80px;
             padding: 6rem 5% 4rem;
             background: linear-gradient(135deg, rgba(230, 57, 70, 0.95) 0%, rgba(198, 41, 54, 0.95) 100%),
-                        url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1600&h=600&fit=crop') center/cover;
+                        url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80') center/cover no-repeat;
             color: white;
             text-align: center;
             position: relative;
@@ -222,18 +211,11 @@
         .page-header::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            animation: float 15s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(30px, -30px) rotate(5deg); }
-            66% { transform: translate(-20px, 20px) rotate(-5deg); }
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
         }
 
         .page-header-content {
@@ -248,72 +230,17 @@
             font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 800;
             margin-bottom: 1.5rem;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .page-header p {
             font-size: clamp(1rem, 2.5vw, 1.3rem);
             line-height: 1.8;
             opacity: 0.95;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
-        /* Filter Section */
-        .filter-section {
-            padding: 3rem 5%;
-            background: white;
-            border-bottom: 2px solid var(--warm-cream);
-            position: sticky;
-            top: 80px;
-            z-index: 100;
-        }
-
-        .filter-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 0.8rem 2rem;
-            border: 2px solid var(--primary-blue);
-            background: white;
-            color: var(--primary-blue);
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--primary-blue);
-            color: white;
-        }
-
-        /* Gallery Section */
-        .gallery-section {
-            padding: 5rem 5%;
-            background: var(--warm-cream);
-        }
-
+        /* Main Content */
         .section-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -337,43 +264,378 @@
 
         .section-title {
             font-family: 'Sora', sans-serif;
-            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 800;
             color: var(--primary-blue);
             margin-bottom: 1.5rem;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
-            gap: 2rem;
-            margin-bottom: 5rem;
+        .section-description {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #4A5568;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
         }
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+        /* Philosophy Section */
+        .philosophy-section {
+            padding: 6rem 5%;
             background: white;
         }
 
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        .philosophy-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
         }
 
-        .gallery-image {
+        .philosophy-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            height: 450px;
+        }
+
+        .philosophy-image img {
             width: 100%;
-            height: 300px;
+            height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            display: block;
         }
 
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.1);
+        .philosophy-box {
+            background: var(--warm-cream);
+            padding: 3rem;
+            border-radius: 25px;
+            border-left: 6px solid var(--primary-red);
+        }
+
+        .philosophy-box p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--primary-blue);
+            font-weight: 600;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Impact Areas Section */
+        .impact-areas {
+            padding: 6rem 5%;
+            background: var(--warm-cream);
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .area-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border-top: 4px solid var(--accent-green);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .area-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .area-icon {
+            font-size: clamp(3rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .area-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 1.6rem);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .area-card p {
+            color: #4A5568;
+            line-height: 1.7;
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+        }
+
+        /* Current Achievements */
+        .achievements-section {
+            padding: 6rem 5%;
+            background: var(--primary-blue);
+            color: white;
+            position: relative;
+        }
+
+        .achievements-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1600&q=80') center/cover no-repeat;
+            opacity: 0.08;
+        }
+
+        .achievements-section .section-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .achievement-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .achievement-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .achievement-icon {
+            font-size: clamp(3rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .achievement-card h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .achievement-card p {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        /* Vision Statement */
+        .vision-statement {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.95) 0%, rgba(4, 160, 124, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=1600&q=80') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .vision-statement::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .vision-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .vision-content h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+
+        .vision-content p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* Long-Term Targets */
+        .targets-section {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .targets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .target-card {
+            background: var(--warm-cream);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .target-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--primary-red);
+        }
+
+        .target-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .target-number {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .target-card h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .target-card p {
+            color: #4A5568;
+            line-height: 1.7;
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+        }
+
+        /* Impact Multiplier */
+        .multiplier-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+        }
+
+        .multiplier-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .multiplier-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            height: 450px;
+        }
+
+        .multiplier-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .multiplier-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .multiplier-box h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .multiplier-box p {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: #4A5568;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .multiplier-list {
+            text-align: left;
+            margin: 2rem 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        .multiplier-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            color: #4A5568;
+        }
+
+        .multiplier-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Impact Gallery */
+        .impact-gallery {
+            padding: 6rem 5%;
+            background: var(--warm-cream);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 300px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .gallery-overlay {
@@ -381,240 +643,85 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-            padding: 2rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+            padding: 1.5rem;
             color: white;
-            transform: translateY(0);
-            transition: transform 0.3s ease;
         }
 
-        .gallery-category {
-            display: inline-block;
-            background: var(--primary-red);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .gallery-overlay h3 {
+        .gallery-overlay h4 {
             font-family: 'Sora', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-bottom: 0.5rem;
         }
 
         .gallery-overlay p {
             font-size: 0.9rem;
-            opacity: 0.95;
-            margin-bottom: 0.5rem;
-        }
-
-        .gallery-date {
-            font-size: 0.85rem;
-            opacity: 0.8;
-            font-style: italic;
-        }
-
-        /* Event Highlights Section */
-        .highlights-section {
-            padding: 5rem 5%;
-            background: white;
-        }
-
-        .highlights-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .highlight-card {
-            background: var(--warm-cream);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .highlight-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .highlight-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .highlight-content {
-            padding: 2rem;
-        }
-
-        .highlight-year {
-            display: inline-block;
-            background: var(--accent-green);
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .highlight-content h3 {
-            font-family: 'Sora', sans-serif;
-            font-size: 1.4rem;
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-        }
-
-        .highlight-stats {
-            display: flex;
-            gap: 2rem;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 2px solid rgba(29, 53, 87, 0.1);
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-family: 'Sora', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary-red);
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: #4A5568;
-            margin-top: 0.3rem;
-        }
-
-        /* Testimonials Section */
-        .testimonials-section {
-            padding: 5rem 5%;
-            background: var(--primary-blue);
-            color: white;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2.5rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .testimonial-quote {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .author-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent-green);
-        }
-
-        .author-info h4 {
-            font-family: 'Sora', sans-serif;
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .author-info p {
-            font-size: 0.9rem;
             opacity: 0.9;
         }
 
         /* CTA Section */
-        .cta {
+        .cta-section {
             padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--accent-green) 0%, #04A07C 100%);
+            background: linear-gradient(135deg, var(--primary-red) 0%, #C62936 100%);
             color: white;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .cta h2 {
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1600&q=80') center/cover no-repeat;
+            opacity: 0.1;
+        }
+
+        .cta-section .section-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
             font-family: 'Sora', sans-serif;
-            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 800;
             margin-bottom: 1.5rem;
         }
 
-        .cta p {
+        .cta-section p {
             font-size: clamp(1rem, 2.5vw, 1.3rem);
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
         }
 
         .btn {
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: clamp(0.9rem, 2vw, 1.05rem);
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
             transition: all 0.3s ease;
             display: inline-block;
             border: none;
             cursor: pointer;
-            text-align: center;
+            margin: 0 0.5rem;
         }
 
         .btn-white {
             background: white;
-            color: var(--accent-green);
+            color: var(--primary-red);
         }
 
         .btn-white:hover {
             background: var(--warm-cream);
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: var(--accent-green);
         }
 
         /* Footer */
@@ -648,6 +755,7 @@
             color: #A0AEC0;
             line-height: 1.8;
             font-size: clamp(0.9rem, 2vw, 1rem);
+            margin-bottom: 1rem;
         }
 
         .footer-links h4 {
@@ -711,9 +819,16 @@
         }
 
         /* Responsive */
-        @media (max-width: 1024px) {
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+        @media (max-width: 968px) {
+            .philosophy-wrapper,
+            .multiplier-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .philosophy-image,
+            .multiplier-image {
+                order: -1;
+                height: 350px;
             }
         }
 
@@ -732,35 +847,10 @@
                 padding: 4rem 5% 3rem;
             }
 
-            .filter-section {
-                top: 70px;
-            }
-
-            .gallery-section,
-            .highlights-section,
-            .testimonials-section,
-            .cta {
-                padding: 3rem 5%;
-            }
-
-            .gallery-image,
-            .highlight-image {
-                height: 220px;
-            }
-
-            .highlight-stats {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .cta-buttons .btn {
-                width: 100%;
-                max-width: 300px;
+            .philosophy-section, .impact-areas, .achievements-section,
+            .vision-statement, .targets-section, .multiplier-section, 
+            .impact-gallery, .cta-section {
+                padding: 4rem 5%;
             }
         }
 
@@ -768,14 +858,9 @@
             .logo {
                 font-size: 1.5rem;
             }
-
-            .filter-btn {
-                padding: 0.6rem 1.2rem;
-                font-size: 0.85rem;
-            }
         }
 
-        /* Accessibility improvements */
+        /* Accessibility */
         @media (prefers-reduced-motion: reduce) {
             *,
             *::before,
@@ -786,7 +871,6 @@
             }
         }
 
-        /* Focus styles for accessibility */
         a:focus,
         button:focus {
             outline: 3px solid var(--primary-red);
@@ -802,8 +886,10 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="programs.html">Programs</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
                 <li><a href="impact.html" class="active">Impact</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="partners.html">Partners</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -818,8 +904,10 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="programs.html">Programs</a></li>
+            <li><a href="programmes.html">Programmes</a></li>
             <li><a href="impact.html">Impact</a></li>
+            <li><a href="get-involved.html">Get Involved</a></li>
+            <li><a href="partners.html">Partners</a></li>
             <li><a href="resources.html">Resources</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -830,233 +918,193 @@
     <section class="page-header">
         <div class="page-header-content">
             <h1>Our Impact</h1>
-            <p>Explore our Impact making a difference through education, screening, advocacy, and community outreach across Nigeria.</p>
+            <p>At TOHAI, we measure success by lives reached, systems strengthened, and futures changed.</p>
         </div>
     </section>
 
-    <!-- Filter Section -->
-    <section class="filter-section">
-        <div class="filter-container">
-            <button class="filter-btn active" data-filter="all">All Events</button>
-            <button class="filter-btn" data-filter="education">Education</button>
-            <button class="filter-btn" data-filter="screening">Screening</button>
-            <button class="filter-btn" data-filter="outreach">Outreach</button>
-            <button class="filter-btn" data-filter="advocacy">Advocacy</button>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery-section">
+    <!-- Impact Philosophy -->
+    <section class="philosophy-section">
         <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Our Approach</span>
+                <h2 class="section-title">How We Measure Success</h2>
+            </div>
+            <div class="philosophy-wrapper">
+                <div class="philosophy-image">
+                    <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=80" alt="Healthcare workers celebrating success with communities">
+                </div>
+                <div>
+                    <div class="philosophy-box">
+                        <p>We measure success not by activities, but by lives protected.</p>
+                    </div>
+                    <p class="section-description" style="margin-top: 2rem; text-align: left;">Impact is not about the number of events we run or the materials we distribute. It's about the young people who now understand their genotype, the newborns who receive early diagnosis, the families connected to care, and the policies that will protect future generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Impact Areas -->
+    <section class="impact-areas">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Focus Areas</span>
+                <h2 class="section-title">Our Key Impact Areas</h2>
+            </div>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <span class="area-icon" role="img" aria-label="Education icon">🎓</span>
+                    <h3>Youth Education</h3>
+                    <p>Empowering young Nigerians with genotype knowledge for informed decisions about relationships and family planning.</p>
+                </div>
+                <div class="area-card">
+                    <span class="area-icon" role="img" aria-label="Screening icon">🔬</span>
+                    <h3>Community Screening</h3>
+                    <p>Expanding access to affordable genotype testing in underserved communities across Nigeria.</p>
+                </div>
+                <div class="area-card">
+                    <span class="area-icon" role="img" aria-label="Healthcare icon">🏥</span>
+                    <h3>Referral Pathways</h3>
+                    <p>Connecting individuals to early diagnosis, treatment, and long-term care support systems.</p>
+                </div>
+                <div class="area-card">
+                    <span class="area-icon" role="img" aria-label="Policy icon">📋</span>
+                    <h3>Policy Advocacy</h3>
+                    <p>Driving national policy reform for universal newborn screening and sustainable public health systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Achievements -->
+    <section class="achievements-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label" style="background: rgba(255,255,255,0.2); color: white;">Current Impact</span>
+                <h2 class="section-title" style="color: white;">What We've Achieved</h2>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">👥</div>
+                    <h4>Thousands of Young People Educated</h4>
+                    <p>Reached communities across multiple states with genotype awareness programmes in schools and communities.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🔬</div>
+                    <h4>Hundreds of Screenings Supported</h4>
+                    <p>Facilitated early detection through partnerships with healthcare providers and mobile screening drives.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🤝</div>
+                    <h4>Strengthened Community Partnerships</h4>
+                    <p>Built lasting relationships with hospitals, laboratories, schools, and community organisations.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">📋</div>
+                    <h4>Active Policy Engagement</h4>
+                    <p>Collaborating with government agencies and health institutions to advocate for universal screening.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Statement -->
+    <section class="vision-statement">
+        <div class="section-container">
+            <div class="vision-content">
+                <h2>Our Long-Term Goal</h2>
+                <p>A Nigeria where every child is screened at birth and every young person knows their genotype.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Long-Term Targets -->
+    <section class="targets-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Ambitious Goals</span>
+                <h2 class="section-title">Our Long-Term Impact Targets</h2>
+                <p class="section-description">These ambitious targets guide our work and partnerships, ensuring we scale towards national transformation.</p>
+            </div>
+            <div class="targets-grid">
+                <div class="target-card">
+                    <span class="target-number">1M</span>
+                    <h4>Youth Educated</h4>
+                    <p>Reach 1 million young Nigerians with comprehensive genotype education programmes.</p>
+                </div>
+                <div class="target-card">
+                    <span class="target-number">100K+</span>
+                    <h4>Screenings Facilitated</h4>
+                    <p>Facilitate 100,000+ genotype screening tests through community partnerships.</p>
+                </div>
+                <div class="target-card">
+                    <span class="target-number">15+</span>
+                    <h4>States Reached</h4>
+                    <p>Build community screening partnerships and education programmes across 15+ Nigerian states.</p>
+                </div>
+                <div class="target-card">
+                    <span class="target-number">1</span>
+                    <h4>National Policy</h4>
+                    <p>Advocate for and support the national adoption of universal newborn screening.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Multiplier -->
+    <section class="multiplier-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Multiplier Effect</span>
+                <h2 class="section-title">How Our Impact Grows</h2>
+            </div>
+            <div class="multiplier-wrapper">
+                <div class="multiplier-box">
+                    <h3>Prevention Creates Lasting Change</h3>
+                    <p>By intervening at the genotype awareness and newborn screening stages, TOHAI addresses the root causes of sickle cell disease burden rather than its downstream consequences.</p>
+                    <ul class="multiplier-list">
+                        <li>Reduced child mortality rates</li>
+                        <li>Lower long-term healthcare costs for families and government</li>
+                        <li>Strengthened primary healthcare systems nationwide</li>
+                        <li>National health system resilience and sustainability</li>
+                        <li>Generational impact on family planning and health outcomes</li>
+                    </ul>
+                    <p style="margin-top: 2rem;">This approach delivers not just individual benefits, but creates a multiplier effect across public health, maternal and child survival, and long-term economic productivity.</p>
+                </div>
+                <div class="multiplier-image">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80" alt="Community health workers making impact">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Gallery -->
+    <section class="impact-gallery">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Our Work</span>
+                <h2 class="section-title">Impact in Action</h2>
+                <p class="section-description">See the real-world impact of our programmes across Nigeria.</p>
+            </div>
             <div class="gallery-grid">
-                <!-- Impact Item 1 -->
-                <div class="gallery-item" data-category="education">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=600&fit=crop" alt="Community education workshop" class="gallery-image">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="Youth education session">
                     <div class="gallery-overlay">
-                        <span class="gallery-category">Education</span>
-                        <h3>Youth Genotype Workshop</h3>
-                        <p>150+ students learned about genotype compatibility</p>
-                        <span class="gallery-date">November 2025</span>
+                        <h4>Education Sessions</h4>
+                        <p>Empowering young people with knowledge</p>
                     </div>
                 </div>
-
-                <!-- Impact Item 2 -->
-                <div class="gallery-item" data-category="screening">
-                    <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600&h=600&fit=crop" alt="Medical screening event" class="gallery-image">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=600&q=80" alt="Community screening">
                     <div class="gallery-overlay">
-                        <span class="gallery-category">Screening</span>
-                        <h3>Free Screening Drive</h3>
-                        <p>100+ community members received free genotype testing</p>
-                        <span class="gallery-date">October 2025</span>
+                        <h4>Community Screening</h4>
+                        <p>Making testing accessible for all</p>
                     </div>
                 </div>
-
-                <!-- Impact Item 3 -->
-                <div class="gallery-item" data-category="outreach">
-                    <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600&h=600&fit=crop" alt="School outreach program" class="gallery-image">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=600&q=80" alt="Healthcare collaboration">
                     <div class="gallery-overlay">
-                        <span class="gallery-category">Outreach</span>
-                        <h3>School Health Campaign</h3>
-                        <p>Reaching students in secondary schools across Lagos</p>
-                        <span class="gallery-date">September 2025</span>
-                    </div>
-                </div>
-
-                <!-- Impact Item 4 -->
-                <div class="gallery-item" data-category="advocacy">
-                    <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&h=600&fit=crop" alt="Policy advocacy meeting" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <span class="gallery-category">Advocacy</span>
-                        <h3>Policy Stakeholder Meeting</h3>
-                        <p>Engaging health officials on mandatory screening policies</p>
-                        <span class="gallery-date">August 2025</span>
-                    </div>
-                </div>
-
-                <!-- Impact Item 5 -->
-                <div class="gallery-item" data-category="education">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=600&fit=crop" alt="Classroom education session" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <span class="gallery-category">Education</span>
-                        <h3>University Awareness Week</h3>
-                        <p>Campus-wide genotype education and awareness campaign</p>
-                        <span class="gallery-date">July 2025</span>
-                    </div>
-                </div>
-
-                <!-- Impact Item 6 -->
-                <div class="gallery-item" data-category="outreach">
-                    <img src="https://images.unsplash.com/photo-1512678080530-7760d81faba6?w=600&h=600&fit=crop" alt="Volunteers helping community" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <span class="gallery-category">Outreach</span>
-                        <h3>Community Health Fair</h3>
-                        <p>Volunteers providing health education and support</p>
-                        <span class="gallery-date">June 2025</span>
-                    </div>
-                </div>
-
-                <!-- Impact Item 7 -->
-                <div class="gallery-item" data-category="screening">
-                    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&h=600&fit=crop" alt="Laboratory testing" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <span class="gallery-category">Screening</span>
-                        <h3>Newborn Screening Initiative</h3>
-                        <p>Partnership with hospitals for early detection programs</p>
-                        <span class="gallery-date">May 2025</span>
-                    </div>
-                </div>
-
-                <!-- Impact Item 8 -->
-                <div class="gallery-item" data-category="education">
-                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=600&fit=crop" alt="Training healthcare workers" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <span class="gallery-category">Education</span>
-                        <h3>Healthcare Worker Training</h3>
-                        <p>Capacity building for frontline health providers</p>
-                        <span class="gallery-date">April 2025</span>
-                    </div>
-                </div>
-
-                <!-- Impact Item 9 -->
-                <div class="gallery-item" data-category="outreach">
-                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=600&fit=crop" alt="Community volunteers" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <span class="gallery-category">Outreach</span>
-                        <h3>Rural Community Outreach</h3>
-                        <p>Bringing awareness to underserved communities</p>
-                        <span class="gallery-date">March 2025</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Event Highlights Section -->
-    <section class="highlights-section">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">Highlights</span>
-                <h2 class="section-title">Major Events & Milestones</h2>
-            </div>
-            <div class="highlights-grid">
-                <div class="highlight-card">
-                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=400&fit=crop" alt="Annual awareness campaign" class="highlight-image">
-                    <div class="highlight-content">
-                        <span class="highlight-year">2025</span>
-                        <h3>World Sickle Cell Day Campaign</h3>
-                        <p>Our largest awareness campaign reached thousands across 5 states with free screenings, educational materials, and community support.</p>
-                        <div class="highlight-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">2,500+</span>
-                                <p class="stat-label">People Reached</p>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">500+</span>
-                                <p class="stat-label">Tests Conducted</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="highlight-card">
-                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&h=400&fit=crop" alt="School program launch" class="highlight-image">
-                    <div class="highlight-content">
-                        <span class="highlight-year">2024</span>
-                        <h3>Schools Partnership Launch</h3>
-                        <p>Launched our comprehensive school education program now operating in 20+ secondary schools across Nigeria.</p>
-                        <div class="highlight-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">20+</span>
-                                <p class="stat-label">Schools</p>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">3,000+</span>
-                                <p class="stat-label">Students</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="highlight-card">
-                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop" alt="Training workshop" class="highlight-image">
-                    <div class="highlight-content">
-                        <span class="highlight-year">2024</span>
-                        <h3>Volunteer Training Program</h3>
-                        <p>Trained 50 community health advocates who are now champions for genotype awareness in their communities.</p>
-                        <div class="highlight-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">50</span>
-                                <p class="stat-label">Volunteers Trained</p>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">15</span>
-                                <p class="stat-label">Communities</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label" style="background: rgba(255,255,255,0.2); color: white;">Testimonials</span>
-                <h2 class="section-title" style="color: white;">Voices from Our Community</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"TOHAI's workshop at our school opened my eyes to the importance of knowing my genotype. I never understood what it meant until they explained it so clearly. Now I can make informed decisions about my health."</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop" alt="Student testimonial" class="author-image">
-                        <div class="author-info">
-                            <h4>Chioma A.</h4>
-                            <p>Student, Lagos</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"The free screening event in our community was a blessing. I found out my genotype and received counseling that helped me understand what it means for my family planning. Thank you TOHAI!"</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop" alt="Community member testimonial" class="author-image">
-                        <div class="author-info">
-                            <h4>Emmanuel O.</h4>
-                            <p>Community Member, Abuja</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"As a teacher, I've seen the impact of TOHAI's programs firsthand. Our students are now more aware and informed. This organization is truly making a difference in young people's lives."</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop" alt="Teacher testimonial" class="author-image">
-                        <div class="author-info">
-                            <h4>Mrs. Adebayo</h4>
-                            <p>Secondary School Teacher</p>
-                        </div>
+                        <h4>Healthcare Partnerships</h4>
+                        <p>Building stronger care networks</p>
                     </div>
                 </div>
             </div>
@@ -1064,14 +1112,12 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
+    <section class="cta-section">
         <div class="section-container">
-            <h2>Be Part of Our Next Event</h2>
-            <p>Join us in making a difference. Volunteer at our programs, attend our workshops, or support our mission through donations.</p>
-            <div class="cta-buttons">
-                <a href="volunteer.html" class="btn btn-white">Volunteer With Us</a>
-                <a href="donate.html" class="btn btn-outline">Support Our Work</a>
-            </div>
+            <h2>Be Part of Our Impact</h2>
+            <p>Your support enables us to reach more communities, strengthen health systems, and drive policy change that will protect future generations.</p>
+            <a href="donate.html" class="btn btn-white">Support Our Work</a>
+            <a href="partners.html" class="btn btn-white">Partner With Us</a>
         </div>
     </section>
 
@@ -1081,7 +1127,13 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h3>TOHAI</h3>
-                    <p>Tochi Health Access Initiative is committed to reducing the burden of sickle cell disease through education, screening, and advocacy.</p>
+                    <p>Tochi Health Access Initiative is a Nigerian non-profit public health organisation committed to preventing sickle cell disease through education, screening, and advocacy.</p>
+                    <p style="margin-top: 1rem;"><strong>Nigeria Office:</strong><br>
+                    Pius B Abang Close, Asokoro Extension,<br>
+                    Asokoro, Abuja, Nigeria</p>
+                    <p style="margin-top: 0.5rem;"><strong>UK Office:</strong><br>
+                    439 Beverley Road,<br>
+                    Hull, HU5 1NR, England, UK</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook">f</a>
                         <a href="#" class="social-link" aria-label="Instagram">📷</a>
@@ -1094,25 +1146,26 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="programs.html">Programs</a></li>
-			<li><a href="impact.html">Impact</a></li>
-                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="programmes.html">Programmes</a></li>
+                        <li><a href="impact.html">Impact</a></li>
+                        <li><a href="partners.html">Partners</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Get Involved</h4>
                     <ul>
                         <li><a href="donate.html">Donate</a></li>
-                        <li><a href="volunteer.html">Volunteer</a></li>
-                        <li><a href="contact.html">Partner With Us</a></li>
+                        <li><a href="get-involved.html">Volunteer</a></li>
+                        <li><a href="partners.html">Partner With Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="mailto:info@tohai.org">info@tohai.org</a></li>
-                        <li><a href="tel:+234">+234 XXX XXX XXXX</a></li>
-                        <li><a href="contact.html">Contact Form</a></li>
+                        <li><a href="tel:+2347063323678">+234 706 332 3678</a></li>
+                        <li><a href="resources.html">Resources</a></li>
                     </ul>
                 </div>
             </div>
@@ -1122,7 +1175,7 @@
         </div>
     </footer>
 
-    <!-- Mobile Menu JavaScript -->
+    <!-- JavaScript -->
     <script>
         // Mobile menu functionality
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -1160,30 +1213,17 @@
             }
         });
 
-        // Filter functionality
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-
-                const filterValue = btn.getAttribute('data-filter');
-
-                galleryItems.forEach(item => {
-                    if (filterValue === 'all') {
-                        item.style.display = 'block';
-                    } else {
-                        if (item.getAttribute('data-category') === filterValue) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    }
-                });
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
     </script>

@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOHAI Admin Dashboard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-red: #E63946;
+            --primary-blue: #1D3557;
+            --accent-green: #06D6A0;
+            --warm-cream: #F8F4F1;
+            --soft-gray: #A8DADC;
+            --dark-text: #1A1A2E;
+            --bg-dark: #0A0E27;
+            --bg-darker: #060917;
+            --card-bg: #12172E;
+            --border-color: rgba(230, 57, 70, 0.2);
+            --success: #06D6A0;
+            --warning: #FFB703;
+            --danger: #E63946;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Archivo', sans-serif;
+            background: var(--bg-dark);
+            color: #E8E9ED;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(230, 57, 70, 0.15) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        .bg-animation::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(6, 214, 160, 0.1) 0%, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            animation: pulse 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: var(--card-bg);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem 0;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar.mobile-hidden {
+            transform: translateX(-100%);
+        }
+
+        .logo {
+            font-family: 'Archivo', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            text-align: center;
+            margin-bottom: 3rem;
+            letter-spacing: -1px;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin: 0.5rem 1.5rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            color: #A0A3BD;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            background: rgba(230, 57, 70, 0.1);
+            color: var(--primary-red);
+        }
+
+        .nav-link.active {
+            background: rgba(230, 57, 70, 0.15);
+            color: var(--primary-red);
+        }
+
+        .nav-link.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 60%;
+            background: var(--primary-red);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .nav-icon {
+            font-size: 1.3rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 280px;
+            padding: 2rem 3rem;
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .header-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #E63946, #FF6B77);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-input {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1rem 0.8rem 3rem;
+            border-radius: 12px;
+            color: #E8E9ED;
+            font-family: 'Archivo', sans-serif;
+            font-size: 0.95rem;
+            width: 300px;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6C6F93;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.6rem 1rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .user-profile:hover {
+            border-color: var(--primary-red);
+        }
+
+        .user-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-red), var(--accent-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(230, 57, 70, 0.2);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            opacity: 0.05;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card.red::before { background: var(--primary-red); }
+        .stat-card.green::before { background: var(--accent-green); }
+        .stat-card.blue::before { background: var(--soft-gray); }
+        .stat-card.yellow::before { background: var(--warning); }
+
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #A0A3BD;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .stat-card.red .stat-icon { background: rgba(230, 57, 70, 0.15); color: var(--primary-red); }
+        .stat-card.green .stat-icon { background: rgba(6, 214, 160, 0.15); color: var(--accent-green); }
+        .stat-card.blue .stat-icon { background: rgba(168, 218, 220, 0.15); color: var(--soft-gray); }
+        .stat-card.yellow .stat-icon { background: rgba(255, 183, 3, 0.15); color: var(--warning); }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-change {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .stat-change.positive {
+            background: rgba(6, 214, 160, 0.15);
+            color: var(--accent-green);
+        }
+
+        .stat-change.negative {
+            background: rgba(230, 57, 70, 0.15);
+            color: var(--primary-red);
+        }
+
+        /* Data Table */
+        .table-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .table-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .table-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .table-filters {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.2rem;
+            background: rgba(230, 57, 70, 0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: #E8E9ED;
+            cursor: pointer;
+            font-family: 'Archivo', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background: rgba(230, 57, 70, 0.2);
+            border-color: var(--primary-red);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-red);
+            border-color: var(--primary-red);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table thead {
+            background: rgba(230, 57, 70, 0.05);
+        }
+
+        .data-table th {
+            padding: 1.2rem 2rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #A0A3BD;
+        }
+
+        .data-table td {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid rgba(230, 57, 70, 0.1);
+            font-size: 0.95rem;
+        }
+
+        .data-table tbody tr {
+            transition: all 0.2s ease;
+        }
+
+        .data-table tbody tr:hover {
+            background: rgba(230, 57, 70, 0.05);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .status-badge.new {
+            background: rgba(255, 183, 3, 0.15);
+            color: var(--warning);
+        }
+
+        .status-badge.in-progress {
+            background: rgba(168, 218, 220, 0.15);
+            color: var(--soft-gray);
+        }
+
+        .status-badge.resolved {
+            background: rgba(6, 214, 160, 0.15);
+            color: var(--accent-green);
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            color: #A0A3BD;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-size: 1.1rem;
+        }
+
+        .action-btn:hover {
+            background: rgba(230, 57, 70, 0.1);
+            color: var(--primary-red);
+        }
+
+        /* Charts Section */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .chart-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-placeholder {
+            width: 100%;
+            height: 300px;
+            background: rgba(230, 57, 70, 0.05);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6C6F93;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 1.5rem;
+            left: 1.5rem;
+            z-index: 200;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem;
+            border-radius: 10px;
+            color: var(--primary-red);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #6C6F93;
+        }
+
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        /* Loading Skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s ease-in-out infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-content {
+                margin-left: 0;
+                padding: 2rem 1.5rem;
+            }
+
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-input {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .table-container {
+                overflow-x: auto;
+            }
+
+            .data-table {
+                min-width: 600px;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-card,
+        .table-container,
+        .chart-card {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">TOHAI</div>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#dashboard" class="nav-link active">
+                        <span class="nav-icon">📊</span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contacts" class="nav-link">
+                        <span class="nav-icon">📧</span>
+                        <span>Contact Forms</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#volunteers" class="nav-link">
+                        <span class="nav-icon">🤝</span>
+                        <span>Volunteers</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#donations" class="nav-link">
+                        <span class="nav-icon">💰</span>
+                        <span>Donations</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#newsletter" class="nav-link">
+                        <span class="nav-icon">📰</span>
+                        <span>Newsletter</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#analytics" class="nav-link">
+                        <span class="nav-icon">📈</span>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#settings" class="nav-link">
+                        <span class="nav-icon">⚙️</span>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="header-title">Dashboard Overview</h1>
+            <div class="header-actions">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" placeholder="Search...">
+                </div>
+                <div class="user-profile">
+                    <div class="user-avatar">A</div>
+                    <span>Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Grid -->
+        <section class="stats-grid">
+            <div class="stat-card red">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-label">Total Contacts</div>
+                        <div class="stat-value" id="totalContacts">247</div>
+                        <span class="stat-change positive">↑ 12% this week</span>
+                    </div>
+                    <div class="stat-icon">📧</div>
+                </div>
+            </div>
+
+            <div class="stat-card green">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-label">Volunteers</div>
+                        <div class="stat-value" id="totalVolunteers">89</div>
+                        <span class="stat-change positive">↑ 8% this month</span>
+                    </div>
+                    <div class="stat-icon">🤝</div>
+                </div>
+            </div>
+
+            <div class="stat-card blue">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-label">Donations</div>
+                        <div class="stat-value" id="totalDonations">₦2.4M</div>
+                        <span class="stat-change positive">↑ 23% this month</span>
+                    </div>
+                    <div class="stat-icon">💰</div>
+                </div>
+            </div>
+
+            <div class="stat-card yellow">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-label">Subscribers</div>
+                        <div class="stat-value" id="totalSubscribers">1,532</div>
+                        <span class="stat-change positive">↑ 5% this week</span>
+                    </div>
+                    <div class="stat-icon">📰</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Contacts Table -->
+        <section class="table-container">
+            <div class="table-header">
+                <h2 class="table-title">Recent Contact Submissions</h2>
+                <div class="table-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="new">New</button>
+                    <button class="filter-btn" data-filter="in-progress">In Progress</button>
+                    <button class="filter-btn" data-filter="resolved">Resolved</button>
+                </div>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="contactsTableBody">
+                    <tr>
+                        <td>Adebayo Okonkwo</td>
+                        <td>adebayo@example.com</td>
+                        <td>Partnership Inquiry</td>
+                        <td>Jan 28, 2026</td>
+                        <td><span class="status-badge new">New</span></td>
+                        <td>
+                            <button class="action-btn" title="View">👁️</button>
+                            <button class="action-btn" title="Reply">✉️</button>
+                            <button class="action-btn" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Chinelo Nwosu</td>
+                        <td>chinelo@example.com</td>
+                        <td>Volunteer Application</td>
+                        <td>Jan 27, 2026</td>
+                        <td><span class="status-badge in-progress">In Progress</span></td>
+                        <td>
+                            <button class="action-btn" title="View">👁️</button>
+                            <button class="action-btn" title="Reply">✉️</button>
+                            <button class="action-btn" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Emeka Eze</td>
+                        <td>emeka@example.com</td>
+                        <td>Donation Question</td>
+                        <td>Jan 26, 2026</td>
+                        <td><span class="status-badge resolved">Resolved</span></td>
+                        <td>
+                            <button class="action-btn" title="View">👁️</button>
+                            <button class="action-btn" title="Reply">✉️</button>
+                            <button class="action-btn" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fatima Bello</td>
+                        <td>fatima@example.com</td>
+                        <td>General Inquiry</td>
+                        <td>Jan 25, 2026</td>
+                        <td><span class="status-badge new">New</span></td>
+                        <td>
+                            <button class="action-btn" title="View">👁️</button>
+                            <button class="action-btn" title="Reply">✉️</button>
+                            <button class="action-btn" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ibrahim Mohammed</td>
+                        <td>ibrahim@example.com</td>
+                        <td>Partnership Opportunity</td>
+                        <td>Jan 24, 2026</td>
+                        <td><span class="status-badge in-progress">In Progress</span></td>
+                        <td>
+                            <button class="action-btn" title="View">👁️</button>
+                            <button class="action-btn" title="Reply">✉️</button>
+                            <button class="action-btn" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts-grid">
+            <div class="chart-card">
+                <h3 class="chart-title">Monthly Submissions Trend</h3>
+                <div class="chart-placeholder">
+                    <canvas id="submissionsChart" width="400" height="300"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3 class="chart-title">Donation Distribution</h3>
+                <div class="chart-placeholder">
+                    <canvas id="donationsChart" width="400" height="300"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sidebar = document.getElementById('sidebar');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        // Navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                // Close mobile menu
+                if (window.innerWidth <= 1024) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        });
+
+        // Filter Buttons
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                filterTable(filter);
+            });
+        });
+
+        function filterTable(filter) {
+            const rows = document.querySelectorAll('#contactsTableBody tr');
+            rows.forEach(row => {
+                if (filter === 'all') {
+                    row.style.display = '';
+                } else {
+                    const status = row.querySelector('.status-badge').textContent.toLowerCase().trim();
+                    row.style.display = status === filter ? '' : 'none';
+                }
+            });
+        }
+
+        // Simple Chart Drawing (using Canvas)
+        function drawSubmissionsChart() {
+            const canvas = document.getElementById('submissionsChart');
+            const ctx = canvas.getContext('2d');
+            
+            // Sample data
+            const months = ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'];
+            const data = [15, 22, 18, 30, 25, 35, 42];
+            
+            const padding = 40;
+            const chartWidth = canvas.width - padding * 2;
+            const chartHeight = canvas.height - padding * 2;
+            const maxValue = Math.max(...data);
+            
+            // Clear canvas
+            ctx.fillStyle = '#12172E';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw bars
+            const barWidth = chartWidth / data.length - 10;
+            data.forEach((value, index) => {
+                const barHeight = (value / maxValue) * chartHeight;
+                const x = padding + (index * (chartWidth / data.length)) + 5;
+                const y = canvas.height - padding - barHeight;
+                
+                // Gradient
+                const gradient = ctx.createLinearGradient(x, y, x, canvas.height - padding);
+                gradient.addColorStop(0, '#E63946');
+                gradient.addColorStop(1, '#FF6B77');
+                
+                ctx.fillStyle = gradient;
+                ctx.fillRect(x, y, barWidth, barHeight);
+                
+                // Labels
+                ctx.fillStyle = '#A0A3BD';
+                ctx.font = '12px Archivo';
+                ctx.textAlign = 'center';
+                ctx.fillText(months[index], x + barWidth / 2, canvas.height - padding + 20);
+                
+                // Values
+                ctx.fillStyle = '#E8E9ED';
+                ctx.fillText(value, x + barWidth / 2, y - 10);
+            });
+        }
+
+        function drawDonationsChart() {
+            const canvas = document.getElementById('donationsChart');
+            const ctx = canvas.getContext('2d');
+            
+            const data = [
+                { label: 'General', value: 45, color: '#E63946' },
+                { label: 'Screening', value: 30, color: '#06D6A0' },
+                { label: 'Education', value: 15, color: '#A8DADC' },
+                { label: 'Research', value: 10, color: '#FFB703' }
+            ];
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = 100;
+            
+            // Clear canvas
+            ctx.fillStyle = '#12172E';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            let currentAngle = -Math.PI / 2;
+            const total = data.reduce((sum, item) => sum + item.value, 0);
+            
+            data.forEach((item, index) => {
+                const sliceAngle = (item.value / total) * 2 * Math.PI;
+                
+                // Draw slice
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, currentAngle, currentAngle + sliceAngle);
+                ctx.lineTo(centerX, centerY);
+                ctx.fillStyle = item.color;
+                ctx.fill();
+                
+                // Draw label
+                const labelAngle = currentAngle + sliceAngle / 2;
+                const labelX = centerX + Math.cos(labelAngle) * (radius + 30);
+                const labelY = centerY + Math.sin(labelAngle) * (radius + 30);
+                
+                ctx.fillStyle = '#E8E9ED';
+                ctx.font = '12px Archivo';
+                ctx.textAlign = 'center';
+                ctx.fillText(`${item.label} ${item.value}%`, labelX, labelY);
+                
+                currentAngle += sliceAngle;
+            });
+        }
+
+        // Initialize charts on load
+        window.addEventListener('load', () => {
+            drawSubmissionsChart();
+            drawDonationsChart();
+        });
+
+        // Search Functionality
+        const searchInput = document.querySelector('.search-input');
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('#contactsTableBody tr');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        });
+
+        // Simulate live data updates
+        function updateStats() {
+            const elements = {
+                totalContacts: document.getElementById('totalContacts'),
+                totalVolunteers: document.getElementById('totalVolunteers'),
+                totalDonations: document.getElementById('totalDonations'),
+                totalSubscribers: document.getElementById('totalSubscribers')
+            };
+
+            // Randomly update one stat
+            const keys = Object.keys(elements);
+            const randomKey = keys[Math.floor(Math.random() * keys.length)];
+            const element = elements[randomKey];
+            
+            const currentValue = parseInt(element.textContent.replace(/[^\d]/g, ''));
+            const newValue = currentValue + Math.floor(Math.random() * 3);
+            
+            if (randomKey === 'totalDonations') {
+                element.textContent = `₦${(newValue / 1000000).toFixed(1)}M`;
+            } else {
+                element.textContent = newValue;
+            }
+        }
+
+        // Update stats every 10 seconds (for demo purposes)
+        // setInterval(updateStats, 10000);
+    </script>
+</body>
+</html>

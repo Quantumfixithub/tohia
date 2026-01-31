@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about TOHAI, a public health NGO in Nigeria working to prevent sickle cell disease through education, screening, and healthcare advocacy.">
-    <meta name="keywords" content="TOHAI, about us, sickle cell, Nigeria, public health, nonprofit, genotype, mission, vision">
+    <meta name="description" content="Partner with TOHAI to build Nigeria's national sickle cell prevention ecosystem. Collaborating with foundations, corporations, government, hospitals, and community organizations.">
+    <meta name="keywords" content="partnerships, collaborate, TOHAI, foundations, corporations, government, hospitals, Nigeria, sickle cell">
     <meta name="author" content="Tochi Health Access Initiative">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="About TOHAI - Our Mission to Prevent Sickle Cell Disease">
-    <meta property="og:description" content="Founded in 2018, TOHAI is dedicated to preventing unnecessary suffering and death caused by sickle cell disease in Nigeria.">
+    <meta property="og:title" content="Partners - TOHAI">
+    <meta property="og:description" content="Together, we are building Nigeria's national sickle cell prevention ecosystem through strategic partnerships.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tohai.org/about.html">
+    <meta property="og:url" content="https://tohai.org/partners.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     
-    <title>About Us - TOHAI | Our Mission & Vision</title>
+    <title>Partners - TOHAI | Building the Prevention Ecosystem</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +51,7 @@
             background: var(--warm-cream);
         }
 
-        /* Navigation - Same as index.html */
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -196,16 +196,16 @@
             display: block;
         }
 
-        /* Page Header */
+        /* Page Header with Hero Image */
         .page-header {
             margin-top: 80px;
-            padding: 6rem 5% 4rem;
-            background: linear-gradient(135deg, rgba(29, 53, 87, 0.95) 0%, rgba(15, 38, 66, 0.95) 100%),
-                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1600&q=80') center/cover no-repeat;
-            color: white;
-            text-align: center;
+            padding: 0;
             position: relative;
             overflow: hidden;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .page-header::before {
@@ -215,14 +215,28 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(6, 214, 160, 0.1) 0%, transparent 50%);
+            background: linear-gradient(135deg, rgba(29, 53, 87, 0.9) 0%, rgba(15, 38, 66, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
         }
 
         .page-header-content {
             max-width: 900px;
             margin: 0 auto;
             position: relative;
-            z-index: 1;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem 5%;
+            color: white;
         }
 
         .page-header h1 {
@@ -238,7 +252,7 @@
             opacity: 0.95;
         }
 
-        /* Main Content Sections */
+        /* Main Content */
         .section-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -270,118 +284,144 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Who We Are Section */
-        .who-we-are {
+        .section-description {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #4A5568;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Vision Section */
+        .vision-section {
             padding: 6rem 5%;
             background: white;
         }
 
-        .who-content-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: 3rem;
-        }
-
-        .who-image {
+        .vision-hero {
+            max-width: 1000px;
+            margin: 0 auto 3rem;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            height: 500px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
         }
 
-        .who-image img {
+        .vision-hero img {
             width: 100%;
-            height: 100%;
+            height: 400px;
             object-fit: cover;
             display: block;
         }
 
-        .content-text {
-            font-size: clamp(1rem, 2vw, 1.15rem);
-            color: #4A5568;
-            line-height: 1.8;
+        .vision-box {
+            background: linear-gradient(135deg, var(--accent-green) 0%, #04A07C 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 25px;
+            text-align: center;
+            max-width: 900px;
+            margin: 3rem auto;
+        }
+
+        .vision-box h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 800;
             margin-bottom: 1.5rem;
         }
 
-        .highlight-box {
-            background: var(--warm-cream);
-            padding: 2rem;
-            border-left: 4px solid var(--primary-red);
-            margin: 2rem 0;
-            font-size: clamp(1rem, 2vw, 1.15rem);
+        .vision-box p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
             line-height: 1.8;
-            font-style: italic;
-            color: var(--primary-blue);
+            opacity: 0.95;
         }
 
-        /* Vision & Mission Section */
-        .vision-mission {
+        /* Partners Grid Section */
+        .partners-section {
             padding: 6rem 5%;
             background: var(--warm-cream);
         }
 
-        .vm-grid {
+        .partners-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
-        .vm-card {
+        .partner-card {
             background: white;
-            padding: 3rem;
             border-radius: 25px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            border-top: 5px solid var(--primary-red);
-            position: relative;
             overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
         }
 
-        .vm-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(230, 57, 70, 0.05) 0%, transparent 70%);
+        .partner-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
         }
 
-        .vm-icon {
+        .partner-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .partner-content {
+            padding: 2.5rem 2rem;
+            border-top: 5px solid var(--primary-red);
+        }
+
+        .partner-icon {
             font-size: clamp(3rem, 6vw, 4rem);
             margin-bottom: 1.5rem;
             display: block;
         }
 
-        .vm-card h3 {
+        .partner-card h3 {
             font-family: 'Sora', sans-serif;
-            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-size: clamp(1.3rem, 3vw, 1.6rem);
             color: var(--primary-blue);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        .vm-card p {
-            font-size: clamp(1rem, 2vw, 1.15rem);
+        .partner-card p {
             color: #4A5568;
             line-height: 1.8;
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
         }
 
-        /* Values Section */
-        .values-section {
+        /* Why Partner Section */
+        .why-partner {
             padding: 6rem 5%;
             background: white;
+            position: relative;
         }
 
-        .values-grid {
+        .why-partner-hero {
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .why-partner-hero img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
 
-        .value-card {
+        .benefit-card {
             background: var(--warm-cream);
             padding: 2.5rem 2rem;
             border-radius: 20px;
@@ -389,179 +429,161 @@
             transition: all 0.3s ease;
         }
 
-        .value-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .value-icon {
+        .benefit-icon {
             font-size: clamp(2.5rem, 5vw, 3rem);
             margin-bottom: 1rem;
-            display: block;
         }
 
-        .value-card h4 {
+        .benefit-card h4 {
             font-family: 'Sora', sans-serif;
-            font-size: clamp(1.2rem, 3vw, 1.4rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
             color: var(--primary-blue);
             margin-bottom: 1rem;
         }
 
-        .value-card p {
+        .benefit-card p {
             color: #4A5568;
             line-height: 1.7;
             font-size: clamp(0.95rem, 2vw, 1rem);
         }
 
-        /* Our Story Section */
-        .story-section {
+        /* Partnership Process */
+        .process-section {
             padding: 6rem 5%;
-            background: linear-gradient(135deg, rgba(6, 214, 160, 0.95) 0%, rgba(4, 160, 124, 0.95) 100%),
-                        url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80') center/cover no-repeat;
+            background: var(--primary-blue);
             color: white;
             position: relative;
+            overflow: hidden;
         }
 
-        .story-section::before {
-            content: '';
+        .process-bg {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-        }
-
-        .story-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .story-image {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            height: 400px;
-        }
-
-        .story-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
+            opacity: 0.1;
+            z-index: 0;
         }
 
-        .story-content {
+        .process-section > * {
             position: relative;
             z-index: 1;
         }
 
-        .story-content p {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
-        }
-
-        /* What We Do Section */
-        .what-we-do {
-            padding: 6rem 5%;
-            background: white;
-        }
-
-        .programs-grid {
+        .process-steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
 
-        .program-card {
-            background: var(--warm-cream);
+        .process-step {
+            background: rgba(255, 255, 255, 0.1);
             padding: 2.5rem 2rem;
             border-radius: 20px;
-            border-left: 5px solid var(--primary-red);
+            text-align: center;
+            backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
 
-        .program-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        .process-step:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
         }
 
-        .program-card h4 {
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step h4 {
             font-family: 'Sora', sans-serif;
             font-size: clamp(1.2rem, 3vw, 1.4rem);
-            color: var(--primary-blue);
             margin-bottom: 1rem;
         }
 
-        .program-card p {
-            color: #4A5568;
+        .process-step p {
             line-height: 1.7;
+            opacity: 0.95;
             font-size: clamp(0.95rem, 2vw, 1rem);
         }
 
-        /* Team/Impact Gallery Section */
-        .impact-gallery {
+        /* Impact Together Section */
+        .impact-together {
             padding: 6rem 5%;
-            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+            background: var(--warm-cream);
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .gallery-item {
+        .impact-hero {
+            max-width: 1000px;
+            margin: 0 auto 4rem;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            height: 300px;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.3s ease;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
         }
 
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
-
-        .gallery-item img {
+        .impact-hero img {
             width: 100%;
-            height: 100%;
+            height: 350px;
             object-fit: cover;
             display: block;
         }
 
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-            padding: 1.5rem;
-            color: white;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
+        .impact-content {
+            max-width: 900px;
+            margin: 3rem auto 0;
         }
 
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .gallery-overlay h4 {
+        .impact-stat {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 4px solid var(--accent-green);
+            transition: all 0.3s ease;
+        }
+
+        .impact-stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
             font-family: 'Sora', sans-serif;
-            font-size: 1.1rem;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: var(--primary-red);
+            display: block;
             margin-bottom: 0.5rem;
         }
 
-        .gallery-overlay p {
-            font-size: 0.9rem;
-            opacity: 0.9;
+        .stat-label {
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+            color: #4A5568;
         }
 
         /* CTA Section */
@@ -574,18 +596,18 @@
             overflow: hidden;
         }
 
-        .cta-section::before {
-            content: '';
+        .cta-bg {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1600&q=80') center/cover no-repeat;
-            opacity: 0.1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+            z-index: 0;
         }
 
-        .cta-section .section-container {
+        .cta-section > * {
             position: relative;
             z-index: 1;
         }
@@ -629,7 +651,18 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        /* Footer - Same as index.html */
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary-red);
+        }
+
+        /* Footer */
         footer {
             background: #0F1419;
             color: white;
@@ -724,19 +757,6 @@
         }
 
         /* Responsive */
-        @media (max-width: 968px) {
-            .who-content-wrapper,
-            .story-wrapper {
-                grid-template-columns: 1fr;
-            }
-
-            .who-image,
-            .story-image {
-                order: -1;
-                height: 350px;
-            }
-        }
-
         @media (max-width: 768px) {
             .nav-links,
             .nav-cta {
@@ -749,18 +769,28 @@
 
             .page-header {
                 margin-top: 70px;
-                padding: 4rem 5% 3rem;
+                height: 400px;
             }
 
-            .who-we-are, .vision-mission, .values-section,
-            .story-section, .what-we-do, .cta-section, .impact-gallery {
+            .vision-section, .partners-section, .why-partner,
+            .process-section, .impact-together, .cta-section {
                 padding: 4rem 5%;
+            }
+
+            .vision-hero img,
+            .why-partner-hero img,
+            .impact-hero img {
+                height: 250px;
             }
         }
 
         @media (max-width: 480px) {
             .logo {
                 font-size: 1.5rem;
+            }
+
+            .page-header {
+                height: 350px;
             }
         }
 
@@ -789,11 +819,11 @@
             <a href="index.html" class="logo" aria-label="TOHAI Home">TOHAI</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="programmes.html">Programmes</a></li>
                 <li><a href="impact.html">Impact</a></li>
                 <li><a href="get-involved.html">Get Involved</a></li>
-                <li><a href="partners.html">Partners</a></li>
+                <li><a href="partners.html" class="active">Partners</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -818,196 +848,225 @@
         <a href="donate.html" class="nav-cta">Donate</a>
     </div>
 
-    <!-- Page Header -->
+    <!-- Page Header with Hero Image -->
     <section class="page-header">
+        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1600&q=80" alt="Partnership collaboration" class="hero-image">
         <div class="page-header-content">
-            <h1>About TOHAI</h1>
-            <p>Dedicated to preventing unnecessary suffering and death caused by sickle cell disease in Nigeria.</p>
+            <h1>Our Partners</h1>
+            <p>Collaboration is at the heart of everything we do. Together, we are building Nigeria's national sickle cell prevention ecosystem.</p>
         </div>
     </section>
 
-    <!-- Who We Are -->
-    <section class="who-we-are">
+    <!-- Vision Section -->
+    <section class="vision-section">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-label">Who We Are</span>
-                <h2 class="section-title">Building a Healthier Nigeria</h2>
+                <span class="section-label">Our Vision</span>
+                <h2 class="section-title">Building Together</h2>
+                <p class="section-description">Partnerships enable us to scale impact, strengthen systems, and reach underserved communities across Nigeria.</p>
             </div>
-            <div class="who-content-wrapper">
-                <div class="who-image">
-                    <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=80" alt="Healthcare workers in Nigeria providing community care">
-                </div>
-                <div>
-                    <p class="content-text">Tochi Health Access Initiative (TOHAI) is a Nigerian non-profit public health organisation founded in 2018 to improve access to genotype education, early screening, and care for sickle cell disease and other inherited blood disorders.</p>
-                    <p class="content-text">We work directly with communities, healthcare providers, policymakers, and development partners to reduce preventable suffering and improve long-term health outcomes.</p>
-                    <p class="highlight-box">We exist because no child should suffer or die from a condition that can largely be prevented through early education, screening, and care.</p>
-                </div>
-            </div>
-            <p class="content-text" style="margin-top: 3rem;">Nigeria carries the world's highest burden of sickle cell disease, yet millions of young people remain unaware of their genotype, and most newborns are not screened at birth. This leads to late diagnosis, severe complications, and early mortality.</p>
-            <p class="content-text">TOHAI was founded to change this reality.</p>
-            <p class="content-text">We deliver community-driven genotype education, affordable screening, referral pathways for early treatment, and policy advocacy to create lasting national change.</p>
-            <p class="content-text">Our work is grounded in evidence-based public health practice, local community trust, and a strong commitment to health equity.</p>
-            <p class="highlight-box">Our approach is community-driven, evidence-based, and impact-focused.</p>
-        </div>
-    </section>
 
-    <!-- Vision & Mission -->
-    <section class="vision-mission">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">Our Direction</span>
-                <h2 class="section-title">Vision & Mission</h2>
+            <div class="vision-hero">
+                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&q=80" alt="Team collaboration and partnership">
             </div>
-            <div class="vm-grid">
-                <div class="vm-card">
-                    <span class="vm-icon" role="img" aria-label="Vision icon">🔭</span>
-                    <h3>Our Vision</h3>
-                    <p>A Nigeria where every young person understands their genotype, every newborn has access to early screening, and far fewer children are born with sickle cell disease.</p>
-                </div>
-                <div class="vm-card">
-                    <span class="vm-icon" role="img" aria-label="Mission icon">🎯</span>
-                    <h3>Our Mission</h3>
-                    <p>To improve access to genotype education, screening, early diagnosis, care, and advocacy through community-driven programmes, strategic partnerships, and policy reform.</p>
-                </div>
+
+            <div class="vision-box">
+                <h3>Together, we are building Nigeria's national sickle cell prevention ecosystem.</h3>
+                <p>Through strategic partnerships, we combine expertise, resources, and networks to create lasting change at the community and national level.</p>
             </div>
         </div>
     </section>
 
-    <!-- Our Values -->
-    <section class="values-section">
+    <!-- Partner Categories -->
+    <section class="partners-section">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-label">Our Values</span>
-                <h2 class="section-title">What Guides Our Work</h2>
+                <span class="section-label">Who We Work With</span>
+                <h2 class="section-title">Our Partner Categories</h2>
             </div>
-            <div class="values-grid">
-                <div class="value-card">
-                    <span class="value-icon" role="img" aria-label="Equity icon">⚖️</span>
-                    <h4>Equity</h4>
-                    <p>We believe everyone deserves access to life-saving health information and care, regardless of income, location, or background.</p>
-                </div>
-                <div class="value-card">
-                    <span class="value-icon" role="img" aria-label="Compassion icon">❤️</span>
-                    <h4>Compassion</h4>
-                    <p>We place empathy, dignity, and lived experience at the centre of everything we do.</p>
-                </div>
-                <div class="value-card">
-                    <span class="value-icon" role="img" aria-label="Integrity icon">🛡️</span>
-                    <h4>Integrity</h4>
-                    <p>We operate transparently, responsibly, and ethically in all our partnerships and programmes.</p>
-                </div>
-                <div class="value-card">
-                    <span class="value-icon" role="img" aria-label="Excellence icon">⭐</span>
-                    <h4>Excellence</h4>
-                    <p>We strive for the highest standards in service delivery, partnerships, and governance.</p>
-                </div>
-                <div class="value-card">
-                    <span class="value-icon" role="img" aria-label="Community icon">🤝</span>
-                    <h4>Community</h4>
-                    <p>We design programmes with communities, not just for them, ensuring relevance and sustainability.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Story -->
-    <section class="story-section">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label" style="background: rgba(255,255,255,0.2); color: white;">Our Story</span>
-                <h2 class="section-title" style="color: white;">Why TOHAI Exists</h2>
-            </div>
-            <div class="story-wrapper">
-                <div class="story-image">
-                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&q=80" alt="Community health workers engaging with local families">
-                </div>
-                <div class="story-content">
-                    <p>TOHAI was founded in 2018 in response to the urgent need for improved awareness, early screening, and access to care for sickle cell disease in Nigeria.</p>
-                    <p>Too many families experience avoidable pain simply because they lacked access to basic health information or early diagnosis. Too many children suffer complications that could have been prevented.</p>
-                    <p>TOHAI exists to change that story.</p>
-                    <p>Through education, screening, community engagement, and advocacy, we are working to ensure that prevention becomes the norm, not the exception.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What We Do -->
-    <section class="what-we-do">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">What We Do</span>
-                <h2 class="section-title">Our Core Work</h2>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <h4>🎓 Genotype Education</h4>
-                    <p>We deliver youth-focused education programmes across schools, faith institutions, universities, and communities, equipping young people with accurate, accessible information about genotype compatibility and informed decision-making.</p>
-                </div>
-                <div class="program-card">
-                    <h4>🔬 Community Screening Partnerships</h4>
-                    <p>We partner with hospitals, laboratories, and mobile clinics to provide affordable and accessible genotype screening, especially in underserved communities.</p>
-                </div>
-                <div class="program-card">
-                    <h4>🏥 Referral Pathways & Early Care</h4>
-                    <p>We establish referral networks linking screening sites to hospitals, treatment centres, and support services, ensuring timely diagnosis and early intervention.</p>
-                </div>
-                <div class="program-card">
-                    <h4>📋 Policy Advocacy</h4>
-                    <p>We advocate for universal newborn screening and stronger national policies that prioritise early detection, prevention, and long-term care.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Impact Gallery -->
-    <section class="impact-gallery">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">Our Impact</span>
-                <h2 class="section-title">TOHAI in Action</h2>
-                <p style="font-size: clamp(1rem, 2vw, 1.15rem); color: #4A5568; max-width: 800px; margin: 0 auto;">See the faces and stories behind our mission to build a healthier Nigeria.</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="Youth education program">
-                    <div class="gallery-overlay">
-                        <h4>Youth Education</h4>
-                        <p>Empowering young people with knowledge</p>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Foundation buildings" class="partner-image">
+                    <div class="partner-content">
+                        <span class="partner-icon" role="img" aria-label="Foundation icon">🏛️</span>
+                        <h3>Foundations</h3>
+                        <p>We collaborate with philanthropic foundations to fund programmes, strengthen systems, and drive research-backed interventions.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=600&q=80" alt="Community screening">
-                    <div class="gallery-overlay">
-                        <h4>Community Screening</h4>
-                        <p>Accessible testing for all</p>
+                <div class="partner-card">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Corporate office" class="partner-image">
+                    <div class="partner-content">
+                        <span class="partner-icon" role="img" aria-label="Corporation icon">🏢</span>
+                        <h3>Corporations</h3>
+                        <p>Corporate partnerships bring financial support, employee engagement, and CSR alignment to advance health equity.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80" alt="Volunteer team">
-                    <div class="gallery-overlay">
-                        <h4>Volunteer Network</h4>
-                        <p>Together we're stronger</p>
+                <div class="partner-card">
+                    <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&q=80" alt="Government healthcare facility" class="partner-image">
+                    <div class="partner-content">
+                        <span class="partner-icon" role="img" aria-label="Government icon">🏥</span>
+                        <h3>Government Health Agencies</h3>
+                        <p>Working with federal and state health ministries to integrate screening into public healthcare systems and policy.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=600&q=80" alt="Healthcare partnership">
-                    <div class="gallery-overlay">
-                        <h4>Healthcare Partnerships</h4>
-                        <p>Building stronger systems</p>
+                <div class="partner-card">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Teaching hospital" class="partner-image">
+                    <div class="partner-content">
+                        <span class="partner-icon" role="img" aria-label="Hospital icon">🏫</span>
+                        <h3>Teaching Hospitals</h3>
+                        <p>Partnerships with teaching hospitals strengthen referral pathways, clinical capacity, and newborn screening infrastructure.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80" alt="Policy advocacy">
-                    <div class="gallery-overlay">
-                        <h4>Policy Advocacy</h4>
-                        <p>Driving systemic change</p>
+                <div class="partner-card">
+                    <img src="https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=800&q=80" alt="Medical laboratory" class="partner-image">
+                    <div class="partner-content">
+                        <span class="partner-icon" role="img" aria-label="Laboratory icon">🔬</span>
+                        <h3>Diagnostic Laboratories</h3>
+                        <p>Laboratory partnerships expand access to affordable, high-quality genotype testing across communities.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=600&q=80" alt="Community engagement">
-                    <div class="gallery-overlay">
-                        <h4>Community Engagement</h4>
-                        <p>Listening, learning, leading</p>
+                <div class="partner-card">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.RkZ_Bj-uPNPpAmCjmHt42QAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="University campus" class="partner-image">
+                    <div class="partner-content">
+                        <span class="partner-icon" role="img" aria-label="School icon">🎓</span>
+                        <h3>Schools & Universities</h3>
+                        <p>Educational institutions help us deliver youth genotype education and build the next generation of health advocates.</p>
+                    </div>
+                </div>
+                <div class="partner-card">
+                    <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80" alt="Community organization meeting" class="partner-image">
+                    <div class="partner-content">
+                        <span class="partner-icon" role="img" aria-label="Community icon">🤝</span>
+                        <h3>Community Organisations</h3>
+                        <p>Grassroots partners ensure cultural relevance, local trust, and sustainable community engagement.</p>
+                    </div>
+                </div>
+                <div class="partner-card">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" alt="Global network" class="partner-image">
+                    <div class="partner-content">
+                        <span class="partner-icon" role="img" aria-label="Globe icon">🌍</span>
+                        <h3>International Development Partners</h3>
+                        <p>Global health partners bring technical expertise, funding, and best practices from successful prevention models worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Partner -->
+    <section class="why-partner">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Partnership Benefits</span>
+                <h2 class="section-title">Why Partner With TOHAI</h2>
+            </div>
+
+            <div class="why-partner-hero">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=80" alt="Successful partnership handshake">
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h4>Strategic Impact</h4>
+                    <p>Your partnership directly contributes to preventing sickle cell disease and strengthening Nigeria's health systems.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h4>Measurable Outcomes</h4>
+                    <p>We track lives reached, screenings delivered, and policy changes achieved — providing transparent impact reporting.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h4>Collaborative Approach</h4>
+                    <p>We design partnerships with you, ensuring alignment with your values, goals, and organizational priorities.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌍</div>
+                    <h4>National Reach</h4>
+                    <p>Our growing network spans multiple states, communities, and institutions across Nigeria.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <h4>Evidence-Based Work</h4>
+                    <p>All programmes are grounded in public health research, community data, and proven prevention strategies.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💡</div>
+                    <h4>Innovation & Learning</h4>
+                    <p>We continuously adapt, test new approaches, and share learnings across the health ecosystem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Process -->
+    <section class="process-section">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80" alt="Team working together" class="process-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label" style="background: rgba(255,255,255,0.2); color: white;">How to Partner</span>
+                <h2 class="section-title" style="color: white;">Partnership Process</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Initial Contact</h4>
+                    <p>Reach out to us via email or our contact form to express partnership interest.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Discovery Meeting</h4>
+                    <p>We discuss your goals, our programmes, and potential areas of collaboration.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Partnership Design</h4>
+                    <p>Together, we co-create a partnership framework aligned with mutual objectives.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Implementation</h4>
+                    <p>We launch programmes, initiatives, or projects with clear roles and timelines.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h4>Impact Reporting</h4>
+                    <p>Regular updates on outcomes, learnings, and impact achieved through the partnership.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Together -->
+    <section class="impact-together">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Collective Impact</span>
+                <h2 class="section-title">What We Achieve Together</h2>
+            </div>
+
+            <div class="impact-hero">
+                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&q=80" alt="Community health impact celebration">
+            </div>
+
+            <div class="impact-content">
+                <div class="impact-stats">
+                    <div class="impact-stat">
+                        <span class="stat-number">1M</span>
+                        <p class="stat-label">Youth educated through partnerships</p>
+                    </div>
+                    <div class="impact-stat">
+                        <span class="stat-number">100K+</span>
+                        <p class="stat-label">Screenings enabled by partner networks</p>
+                    </div>
+                    <div class="impact-stat">
+                        <span class="stat-number">15+</span>
+                        <p class="stat-label">States reached through collaboration</p>
+                    </div>
+                    <div class="impact-stat">
+                        <span class="stat-number">National</span>
+                        <p class="stat-label">Policy advocacy for universal screening</p>
                     </div>
                 </div>
             </div>
@@ -1016,11 +1075,12 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
+        <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=1600&q=80" alt="Partnership collaboration" class="cta-bg">
         <div class="section-container">
-            <h2>Join Us in Creating Change</h2>
-            <p>Whether through partnership, volunteering, or financial support, you can help us prevent suffering and save lives.</p>
-            <a href="donate.html" class="btn btn-white">Support Our Work</a>
-            <a href="get-involved.html" class="btn btn-white">Get Involved</a>
+            <h2>Ready to Partner With Us?</h2>
+            <p>Let's build Nigeria's sickle cell prevention ecosystem together. Your partnership can create lasting, generational impact.</p>
+            <a href="contact.html" class="btn btn-white">Get in Touch</a>
+            <a href="donate.html" class="btn btn-outline">Support Our Work</a>
         </div>
     </section>
 

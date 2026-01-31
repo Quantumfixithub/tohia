@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Educational resources about genotype compatibility, sickle cell disease, screening, and downloadable materials from TOHAI.">
-    <meta name="keywords" content="genotype, sickle cell, resources, education, compatibility chart, screening, TOHAI">
+    <meta name="description" content="Educational resources on sickle cell disease, genotype awareness, and prevention. Evidence-based information from TOHAI.">
+    <meta name="keywords" content="resources, sickle cell, genotype, education, prevention, Nigeria, health information">
     <meta name="author" content="Tochi Health Access Initiative">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Educational Resources - TOHAI">
-    <meta property="og:description" content="Learn about genotype compatibility, sickle cell disease, and access free educational materials">
+    <meta property="og:title" content="Resources - TOHAI">
+    <meta property="og:description" content="Access evidence-based educational resources on genotype awareness and sickle cell disease prevention.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tohai.org/resources.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     
-    <title>Resources - TOHAI | Educational Materials</title>
+    <title>Resources - TOHAI | Educational Materials & Information</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,23 +56,12 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(248, 244, 241, 0.95);
+            background: rgba(248, 244, 241, 0.98);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 5%;
             border-bottom: 2px solid var(--primary-red);
-            animation: slideDown 0.6s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .nav-container {
@@ -207,32 +196,47 @@
             display: block;
         }
 
-        /* Page Header */
+        /* Page Header with Hero Image */
         .page-header {
             margin-top: 80px;
-            padding: 6rem 5% 4rem;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #2A4365 100%);
-            color: white;
-            text-align: center;
+            padding: 0;
             position: relative;
             overflow: hidden;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .page-header::before {
-            content: '📚';
+            content: '';
             position: absolute;
-            font-size: clamp(10rem, 20vw, 20rem);
-            opacity: 0.05;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.9) 0%, rgba(4, 160, 124, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
         }
 
         .page-header-content {
             max-width: 900px;
             margin: 0 auto;
             position: relative;
-            z-index: 1;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem 5%;
+            color: white;
         }
 
         .page-header h1 {
@@ -240,47 +244,29 @@
             font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 800;
             margin-bottom: 1.5rem;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .page-header p {
             font-size: clamp(1rem, 2.5vw, 1.3rem);
             line-height: 1.8;
             opacity: 0.95;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
-        /* Educational Content Section */
-        .educational-section {
-            padding: 6rem 5%;
-            background: white;
-        }
-
+        /* Main Content */
         .section-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .section-label {
             display: inline-block;
-            background: rgba(29, 53, 87, 0.1);
-            color: var(--primary-blue);
+            background: rgba(230, 57, 70, 0.1);
+            color: var(--primary-red);
             padding: 0.5rem 1.5rem;
             border-radius: 50px;
             font-weight: 600;
@@ -292,265 +278,332 @@
 
         .section-title {
             font-family: 'Sora', sans-serif;
-            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 800;
             color: var(--primary-blue);
             margin-bottom: 1.5rem;
         }
 
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-            gap: 2.5rem;
-        }
-
-        .education-card {
+        /* Educational Materials */
+        .materials-section {
+            padding: 6rem 5%;
             background: white;
-            border-radius: 25px;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .material-card {
+            background: var(--warm-cream);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .education-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        .material-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
-        .education-card-image {
+        .material-image {
             width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-green) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
+            height: 220px;
+            object-fit: cover;
         }
 
-        .education-card-content {
-            padding: 2.5rem;
+        .material-content {
+            padding: 2rem;
+            border-left: 5px solid var(--accent-green);
         }
 
-        .education-icon {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            margin-bottom: 1.5rem;
+        .material-icon {
+            font-size: clamp(2.5rem, 5vw, 3rem);
+            margin-bottom: 1rem;
             display: block;
         }
 
-        .education-card h3 {
+        .material-card h3 {
             font-family: 'Sora', sans-serif;
-            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
             color: var(--primary-blue);
             margin-bottom: 1rem;
         }
 
-        .education-card p {
+        .material-card p {
             color: #4A5568;
-            line-height: 1.8;
-            font-size: clamp(0.95rem, 2vw, 1rem);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
         }
 
-        /* Genotype Table Section */
-        .genotype-section {
-            padding: 6rem 5%;
-            background: var(--warm-cream);
-        }
-
-        .genotype-table-container {
-            max-width: 1000px;
-            margin: 3rem auto 0;
-            background: white;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .table-header {
-            background: var(--primary-blue);
+        .download-btn {
+            background: var(--primary-red);
             color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .table-header h3 {
-            font-family: 'Sora', sans-serif;
-            font-size: clamp(1.3rem, 3vw, 1.8rem);
-            margin-bottom: 0.5rem;
-        }
-
-        .table-header p {
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
             font-size: clamp(0.9rem, 2vw, 1rem);
         }
 
-        .table-wrapper {
-            overflow-x: auto;
+        .download-btn:hover {
+            background: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Genotype Compatibility */
+        .compatibility-section {
+            padding: 6rem 5%;
+            background: var(--warm-cream);
+            position: relative;
+        }
+
+        .compatibility-visual {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .compatibility-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .compatibility-table {
+            max-width: 900px;
+            margin: 3rem auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .compatibility-table table {
             width: 100%;
             border-collapse: collapse;
         }
 
-        .compatibility-table th,
-        .compatibility-table td {
-            padding: clamp(1rem, 2vw, 1.5rem);
-            text-align: center;
-            border-bottom: 1px solid #E2E8F0;
-        }
-
         .compatibility-table th {
-            background: var(--warm-cream);
-            font-family: 'Sora', sans-serif;
+            background: var(--primary-blue);
+            color: white;
+            padding: 1.2rem;
+            text-align: left;
             font-weight: 700;
-            color: var(--primary-blue);
-            font-size: clamp(0.85rem, 2vw, 1rem);
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
         }
 
         .compatibility-table td {
-            font-weight: 500;
-            font-size: clamp(0.8rem, 2vw, 0.95rem);
+            padding: 1.2rem;
+            border-bottom: 1px solid #E2E8F0;
+            font-size: clamp(0.9rem, 2vw, 1rem);
         }
 
         .safe {
-            color: var(--accent-green);
-            font-weight: 700;
-        }
-
-        .caution {
-            color: #F59E0B;
-            font-weight: 700;
+            background: rgba(6, 214, 160, 0.1);
+            color: #04A07C;
+            font-weight: 600;
         }
 
         .risky {
+            background: rgba(230, 57, 70, 0.1);
             color: var(--primary-red);
-            font-weight: 700;
+            font-weight: 600;
         }
 
-        /* Myths Section */
-        .myths-section {
+        /* Key Facts Section */
+        .facts-section {
             padding: 6rem 5%;
             background: white;
-        }
-
-        .myths-grid {
-            display: grid;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .myth-card {
-            background: var(--warm-cream);
-            padding: clamp(2rem, 3vw, 2.5rem);
-            border-radius: 20px;
-            border-left: 5px solid var(--primary-red);
-        }
-
-        .myth-label {
-            display: inline-block;
-            background: var(--primary-red);
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: clamp(0.75rem, 2vw, 0.85rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .fact-label {
-            display: inline-block;
-            background: var(--accent-green);
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: clamp(0.75rem, 2vw, 0.85rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            margin-top: 1rem;
-        }
-
-        .myth-card h4 {
-            font-family: 'Sora', sans-serif;
-            font-size: clamp(1.1rem, 3vw, 1.3rem);
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-        }
-
-        .myth-card p {
-            color: #4A5568;
-            line-height: 1.8;
-            font-size: clamp(0.95rem, 2vw, 1rem);
-        }
-
-        /* Downloads Section */
-        .downloads-section {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #0F233C 100%);
-            color: white;
             position: relative;
         }
 
-        .downloads-grid {
+        .facts-hero {
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .facts-hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .facts-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
 
-        .download-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: clamp(2rem, 3vw, 2.5rem);
+        .fact-card {
+            background: var(--warm-cream);
+            padding: 2.5rem 2rem;
             border-radius: 20px;
+            border-top: 4px solid var(--primary-red);
             text-align: center;
             transition: all 0.3s ease;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
         }
 
-        .download-card:hover {
+        .fact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .fact-icon {
+            font-size: clamp(3rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+        }
+
+        .fact-card h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 1.4rem);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .fact-card p {
+            color: #4A5568;
+            line-height: 1.7;
+            font-size: clamp(0.95rem, 2vw, 1rem);
+        }
+
+        /* Prevention Info */
+        .prevention-section {
+            padding: 6rem 5%;
+            background: var(--primary-blue);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .prevention-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .prevention-section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .prevention-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .prevention-step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .prevention-step:hover {
             background: rgba(255, 255, 255, 0.15);
             transform: translateY(-5px);
         }
 
-        .download-icon {
-            font-size: clamp(3rem, 6vw, 4rem);
-            margin-bottom: 1.5rem;
-            display: block;
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
         }
 
-        .download-card h3 {
+        .prevention-step h4 {
             font-family: 'Sora', sans-serif;
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-size: clamp(1.2rem, 3vw, 1.4rem);
             margin-bottom: 1rem;
         }
 
-        .download-card p {
-            margin-bottom: 1.5rem;
+        .prevention-step p {
+            line-height: 1.7;
             opacity: 0.95;
-            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-size: clamp(0.95rem, 2vw, 1rem);
         }
 
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: clamp(0.9rem, 2vw, 1.05rem);
-            transition: all 0.3s ease;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .btn-white {
-            background: white;
-            color: var(--primary-blue);
-        }
-
-        .btn-white:hover {
+        /* FAQ Section */
+        .faq-section {
+            padding: 6rem 5%;
             background: var(--warm-cream);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-image-banner {
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-image-banner img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-green);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transform: translateX(5px);
+        }
+
+        .faq-item h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .faq-item p {
+            color: #4A5568;
+            line-height: 1.8;
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
         }
 
         /* CTA Section */
@@ -559,40 +612,63 @@
             background: linear-gradient(135deg, var(--primary-red) 0%, #C62936 100%);
             color: white;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .cta-section > * {
+            position: relative;
+            z-index: 1;
         }
 
         .cta-section h2 {
             font-family: 'Sora', sans-serif;
-            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 800;
             margin-bottom: 1.5rem;
         }
 
         .cta-section p {
             font-size: clamp(1rem, 2.5vw, 1.3rem);
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            margin: 0 0.5rem;
         }
 
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-outline:hover {
+        .btn-white {
             background: white;
             color: var(--primary-red);
+        }
+
+        .btn-white:hover {
+            background: var(--warm-cream);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         /* Footer */
@@ -626,6 +702,7 @@
             color: #A0AEC0;
             line-height: 1.8;
             font-size: clamp(0.9rem, 2vw, 1rem);
+            margin-bottom: 1rem;
         }
 
         .footer-links h4 {
@@ -702,24 +779,20 @@
             .page-header {
                 margin-top: 70px;
                 padding: 4rem 5% 3rem;
+                height: 400px;
             }
 
-            .educational-section, .genotype-section, .myths-section, .downloads-section, .cta-section {
+            .materials-section, .compatibility-section, .facts-section,
+            .prevention-section, .faq-section, .cta-section {
                 padding: 4rem 5%;
             }
 
-            .education-card-image {
-                height: 150px;
+            .compatibility-table {
+                overflow-x: auto;
             }
 
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .cta-buttons .btn {
-                width: 100%;
-                max-width: 300px;
+            .faq-image-banner img {
+                height: 200px;
             }
         }
 
@@ -728,13 +801,12 @@
                 font-size: 1.5rem;
             }
 
-            .compatibility-table th,
-            .compatibility-table td {
-                padding: 0.8rem 0.4rem;
+            .page-header {
+                height: 350px;
             }
         }
 
-        /* Accessibility improvements */
+        /* Accessibility */
         @media (prefers-reduced-motion: reduce) {
             *,
             *::before,
@@ -745,34 +817,10 @@
             }
         }
 
-        /* Focus styles for accessibility */
         a:focus,
         button:focus {
             outline: 3px solid var(--primary-red);
             outline-offset: 2px;
-        }
-
-        /* Print styles */
-        @media print {
-            nav,
-            .downloads-section,
-            .cta-section,
-            footer {
-                display: none;
-            }
-
-            body {
-                background: white;
-            }
-
-            .page-header {
-                margin-top: 0;
-            }
-
-            .genotype-table-container {
-                box-shadow: none;
-                border: 2px solid #000;
-            }
         }
     </style>
 </head>
@@ -784,8 +832,10 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="programs.html">Programs</a></li>
-		<li><a href="impact.html">Impact</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="partners.html">Partners</a></li>
                 <li><a href="resources.html" class="active">Resources</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -800,197 +850,234 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="programs.html">Programs</a></li>
-	    <li><a href="impact.html">Impact</a></li>
+            <li><a href="programmes.html">Programmes</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="get-involved.html">Get Involved</a></li>
+            <li><a href="partners.html">Partners</a></li>
             <li><a href="resources.html">Resources</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <a href="donate.html" class="nav-cta">Donate</a>
     </div>
 
-    <!-- Page Header -->
+    <!-- Page Header with Hero Image -->
     <section class="page-header">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1600&q=80" alt="Students learning" class="hero-image">
         <div class="page-header-content">
             <h1>Educational Resources</h1>
-            <p>Everything you need to know about genotype compatibility, sickle cell disease, and making informed health decisions.</p>
+            <p>Evidence-based information on genotype awareness, sickle cell disease, and prevention strategies for healthier communities.</p>
         </div>
     </section>
 
-   <!-- Educational Materials Section -->
-    <section class="educational-section">
+    <!-- Educational Materials -->
+    <section class="materials-section">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-label">Learn</span>
+                <span class="section-label">Materials</span>
                 <h2 class="section-title">Educational Materials</h2>
             </div>
-            <div class="education-grid">
-                <div class="education-card">
-                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&h=400&fit=crop" alt="DNA and genetics research" class="education-card-image">
-                    <div class="education-card-content">
-                        <span class="education-icon">🧬</span>
-                        <h3>Understanding Genotypes</h3>
-                        <p>Learn about the different genotypes (AA, AS, SS, AC, SC) and what they mean for your health and future family planning.</p>
+            <div class="materials-grid">
+                <div class="material-card">
+                    <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&q=80" alt="Educational books and materials" class="material-image">
+                    <div class="material-content">
+                        <span class="material-icon" role="img" aria-label="Document icon">📄</span>
+                        <h3>Genotype Education Guide</h3>
+                        <p>Comprehensive guide on genotype compatibility, inheritance patterns, and informed decision-making for young people.</p>
+                        <a href="contact.html" class="download-btn">Request Resource</a>
                     </div>
                 </div>
-                <div class="education-card">
-                    <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&h=400&fit=crop" alt="Heart health and care" class="education-card-image">
-                    <div class="education-card-content">
-                        <span class="education-icon">❤️</span>
-                        <h3>Sickle Cell Disease</h3>
-                        <p>Comprehensive information about sickle cell disease, its symptoms, management, and how it's inherited.</p>
+                <div class="material-card">
+                    <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80" alt="Medical research and health information" class="material-image">
+                    <div class="material-content">
+                        <span class="material-icon" role="img" aria-label="Book icon">📚</span>
+                        <h3>Sickle Cell Disease Overview</h3>
+                        <p>Evidence-based information on sickle cell disease symptoms, management, and prevention strategies.</p>
+                        <a href="contact.html" class="download-btn">Request Resource</a>
                     </div>
                 </div>
-                <div class="education-card">
-                    <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=600&h=400&fit=crop" alt="Medical screening and testing" class="education-card-image">
-                    <div class="education-card-content">
-                        <span class="education-icon">🔬</span>
-                        <h3>Why Early Screening Matters</h3>
-                        <p>Discover the importance of early genotype screening for newborns, children, and young adults.</p>
+                <div class="material-card">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80" alt="Policy documents and research" class="material-image">
+                    <div class="material-content">
+                        <span class="material-icon" role="img" aria-label="Chart icon">📊</span>
+                        <h3>Policy Documents</h3>
+                        <p>Research papers, policy briefs, and advocacy materials on universal newborn screening in Nigeria.</p>
+                        <a href="contact.html" class="download-btn">Request Resource</a>
+                    </div>
+                </div>
+                <div class="material-card">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80" alt="Community education and training" class="material-image">
+                    <div class="material-content">
+                        <span class="material-icon" role="img" aria-label="Presentation icon">📑</span>
+                        <h3>Community Education Toolkit</h3>
+                        <p>Resources for educators, health workers, and community leaders to deliver genotype awareness programmes.</p>
+                        <a href="contact.html" class="download-btn">Request Resource</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Genotype Compatibility Table -->
-    <section class="genotype-section">
+    <!-- Genotype Compatibility Chart -->
+    <section class="compatibility-section">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-label">Compatibility Guide</span>
+                <span class="section-label">Compatibility</span>
                 <h2 class="section-title">Genotype Compatibility Chart</h2>
+                <p style="max-width: 800px; margin: 0 auto; color: #4A5568; font-size: clamp(1rem, 2vw, 1.1rem);">Understanding genotype compatibility is essential for preventing sickle cell disease. This chart shows which combinations are safe and which carry risks.</p>
             </div>
-            <div class="genotype-table-container">
-                <div class="table-header">
-                    <h3>Partnership Compatibility Matrix</h3>
-                    <p>Understanding genotype combinations and their implications</p>
+            
+            <div class="compatibility-visual">
+                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&q=80" alt="DNA and genetic science">
+            </div>
+
+            <div class="compatibility-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Partner 1 Genotype</th>
+                            <th>Partner 2 Genotype</th>
+                            <th>Compatibility Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AA</td>
+                            <td>AA</td>
+                            <td class="safe">✓ Safe</td>
+                        </tr>
+                        <tr>
+                            <td>AA</td>
+                            <td>AS</td>
+                            <td class="safe">✓ Safe</td>
+                        </tr>
+                        <tr>
+                            <td>AA</td>
+                            <td>SS</td>
+                            <td class="safe">✓ Safe (with counseling)</td>
+                        </tr>
+                        <tr>
+                            <td>AS</td>
+                            <td>AS</td>
+                            <td class="risky">⚠ High Risk - Avoid</td>
+                        </tr>
+                        <tr>
+                            <td>AS</td>
+                            <td>SS</td>
+                            <td class="risky">⚠ Very High Risk - Avoid</td>
+                        </tr>
+                        <tr>
+                            <td>SS</td>
+                            <td>SS</td>
+                            <td class="risky">⚠ Extremely High Risk - Avoid</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Facts -->
+    <section class="facts-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Key Facts</span>
+                <h2 class="section-title">Essential Information</h2>
+            </div>
+
+            <div class="facts-hero">
+                <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1200&q=80" alt="Healthcare workers educating community">
+            </div>
+
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <div class="fact-icon">🇳🇬</div>
+                    <h4>Nigeria's Burden</h4>
+                    <p>Nigeria accounts for nearly 50% of global sickle cell disease births, with over 150,000 affected children born annually.</p>
                 </div>
-                <div class="table-wrapper">
-                    <table class="compatibility-table">
-                        <thead>
-                            <tr>
-                                <th>Partner 1</th>
-                                <th>Partner 2</th>
-                                <th>Children's Risk</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>AA</td>
-                                <td>AA</td>
-                                <td>No Risk (100% AA)</td>
-                                <td class="safe">✓ Safe</td>
-                            </tr>
-                            <tr>
-                                <td>AA</td>
-                                <td>AS</td>
-                                <td>Low Risk (50% AA, 50% AS)</td>
-                                <td class="safe">✓ Safe</td>
-                            </tr>
-                            <tr>
-                                <td>AA</td>
-                                <td>SS</td>
-                                <td>All Carriers (100% AS)</td>
-                                <td class="caution">⚠ Caution</td>
-                            </tr>
-                            <tr>
-                                <td>AS</td>
-                                <td>AS</td>
-                                <td>25% SS, 50% AS, 25% AA</td>
-                                <td class="risky">✗ High Risk</td>
-                            </tr>
-                            <tr>
-                                <td>AS</td>
-                                <td>SS</td>
-                                <td>50% AS, 50% SS</td>
-                                <td class="risky">✗ High Risk</td>
-                            </tr>
-                            <tr>
-                                <td>SS</td>
-                                <td>SS</td>
-                                <td>100% SS</td>
-                                <td class="risky">✗ High Risk</td>
-                            </tr>
-                            <tr>
-                                <td>AA</td>
-                                <td>AC</td>
-                                <td>50% AA, 50% AC</td>
-                                <td class="safe">✓ Safe</td>
-                            </tr>
-                            <tr>
-                                <td>AS</td>
-                                <td>AC</td>
-                                <td>Complex (Requires Counseling)</td>
-                                <td class="caution">⚠ Caution</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="fact-card">
+                    <div class="fact-icon">🧬</div>
+                    <h4>Genetic Inheritance</h4>
+                    <p>Sickle cell disease is inherited when both parents carry the sickle cell gene (AS or SS genotype).</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">👶</div>
+                    <h4>Early Detection</h4>
+                    <p>Early diagnosis through newborn screening can reduce childhood mortality by up to 90%.</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">💡</div>
+                    <h4>Prevention is Possible</h4>
+                    <p>Genotype testing before marriage and family planning can prevent most new cases.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Myths & Facts Section -->
-    <section class="myths-section">
+    <!-- Prevention Steps -->
+    <section class="prevention-section">
+        <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=1600&q=80" alt="Medical testing and prevention" class="prevention-bg">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-label">Truth</span>
-                <h2 class="section-title">Sickle Cell Disease: Myths & Facts</h2>
+                <span class="section-label" style="background: rgba(255,255,255,0.2); color: white;">Prevention</span>
+                <h2 class="section-title" style="color: white;">Steps to Prevention</h2>
             </div>
-            <div class="myths-grid">
-                <div class="myth-card">
-                    <span class="myth-label">MYTH</span>
-                    <h4>Sickle cell disease only affects people of African descent</h4>
-                    <span class="fact-label">FACT</span>
-                    <p>While more common in people of African ancestry, sickle cell disease also occurs in people from Mediterranean, Middle Eastern, and South Asian backgrounds.</p>
+            <div class="prevention-steps">
+                <div class="prevention-step">
+                    <div class="step-number">1</div>
+                    <h4>Know Your Genotype</h4>
+                    <p>Get tested early to understand your genotype status before making relationship decisions.</p>
                 </div>
-                <div class="myth-card">
-                    <span class="myth-label">MYTH</span>
-                    <h4>If both partners have AS genotype, all children will have sickle cell disease</h4>
-                    <span class="fact-label">FACT</span>
-                    <p>When both partners are AS, there's a 25% chance each child will have SS (sickle cell disease), 50% chance of AS (carrier), and 25% chance of AA (no trait).</p>
+                <div class="prevention-step">
+                    <div class="step-number">2</div>
+                    <h4>Test Your Partner</h4>
+                    <p>Ensure both partners know their genotypes before marriage or family planning.</p>
                 </div>
-                <div class="myth-card">
-                    <span class="myth-label">MYTH</span>
-                    <h4>People with AS genotype are sick</h4>
-                    <span class="fact-label">FACT</span>
-                    <p>People with AS genotype (sickle cell trait) are generally healthy and do not have symptoms of sickle cell disease. They are carriers of the trait.</p>
+                <div class="prevention-step">
+                    <div class="step-number">3</div>
+                    <h4>Seek Counseling</h4>
+                    <p>Get genetic counseling to understand compatibility and make informed decisions.</p>
                 </div>
-                <div class="myth-card">
-                    <span class="myth-label">MYTH</span>
-                    <h4>Sickle cell disease can be cured easily</h4>
-                    <span class="fact-label">FACT</span>
-                    <p>While there's no widely available cure, sickle cell disease can be managed with proper medical care. Bone marrow transplant is currently the only potential cure but has risks and limitations.</p>
+                <div class="prevention-step">
+                    <div class="step-number">4</div>
+                    <h4>Screen Newborns</h4>
+                    <p>Ensure all newborns are screened within the first few days of life for early intervention.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Downloadables Section -->
-    <section class="downloads-section">
+    <!-- FAQ -->
+    <section class="faq-section">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-label" style="background: rgba(255,255,255,0.2); color: white;">Downloads</span>
-                <h2 class="section-title" style="color: white;">Free Resources</h2>
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
             </div>
-            <div class="downloads-grid">
-                <div class="download-card">
-                    <span class="download-icon" role="img" aria-label="Chart icon">📊</span>
-                    <h3>Genotype Compatibility Chart</h3>
-                    <p>Printable chart showing all genotype combinations and their implications</p>
-                    <a href="#" class="btn btn-white">Download PDF</a>
+
+            <div class="faq-image-banner">
+                <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1200&q=80" alt="Medical consultation and counseling">
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h4>What is genotype?</h4>
+                    <p>Genotype refers to the genetic makeup inherited from both parents. In the context of sickle cell disease, it indicates whether you carry normal hemoglobin genes (AA), sickle cell trait (AS), or sickle cell disease (SS).</p>
                 </div>
-                <div class="download-card">
-                    <span class="download-icon" role="img" aria-label="Books icon">📚</span>
-                    <h3>School Awareness Toolkit</h3>
-                    <p>Complete toolkit for educators to teach genotype education in schools</p>
-                    <a href="#" class="btn btn-white">Download ZIP</a>
+                <div class="faq-item">
+                    <h4>Can AS genotype marry AS genotype?</h4>
+                    <p>While legally possible, it is medically inadvisable. When two AS partners have children, there is a 25% chance each child will have SS (sickle cell disease), 50% chance of AS (carrier), and 25% chance of AA (normal).</p>
                 </div>
-                <div class="download-card">
-                    <span class="download-icon" role="img" aria-label="Hospital icon">🏥</span>
-                    <h3>Screening Referral List</h3>
-                    <p>Directory of trusted healthcare facilities offering genotype screening services</p>
-                    <a href="#" class="btn btn-white">Download PDF</a>
+                <div class="faq-item">
+                    <h4>How is sickle cell disease managed?</h4>
+                    <p>Early diagnosis, regular medical care, pain management, prevention of infections, adequate hydration, and family support are essential for managing sickle cell disease.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Where can I get tested?</h4>
+                    <p>Genotype testing is available at most hospitals, diagnostic laboratories, and health centers across Nigeria. TOHAI also partners with facilities to provide affordable screening.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Is there a cure for sickle cell disease?</h4>
+                    <p>While bone marrow transplant can cure sickle cell disease in some cases, prevention through genotype awareness and informed decision-making remains the most effective approach.</p>
                 </div>
             </div>
         </div>
@@ -998,13 +1085,12 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
+        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1600&q=80" alt="Community support and volunteers" class="cta-bg">
         <div class="section-container">
-            <h2>Have Questions?</h2>
-            <p>Our team is here to help. Reach out for more information about genotype compatibility, screening, or our programs.</p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn btn-white">Contact Us</a>
-                <a href="programs.html" class="btn btn-outline">View Our Programs</a>
-            </div>
+            <h2>Need More Information?</h2>
+            <p>Contact us for educational materials, counseling referrals, or to request resources for your community or organization.</p>
+            <a href="contact.html" class="btn btn-white">Contact Us</a>
+            <a href="programmes.html" class="btn btn-white">View Our Programmes</a>
         </div>
     </section>
 
@@ -1014,7 +1100,13 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h3>TOHAI</h3>
-                    <p>Tochi Health Access Initiative is committed to reducing the burden of sickle cell disease through education, screening, and advocacy.</p>
+                    <p>Tochi Health Access Initiative is a Nigerian non-profit public health organisation committed to preventing sickle cell disease through education, screening, and advocacy.</p>
+                    <p style="margin-top: 1rem;"><strong>Nigeria Office:</strong><br>
+                    Pius B Abang Close, Asokoro Extension,<br>
+                    Asokoro, Abuja, Nigeria</p>
+                    <p style="margin-top: 0.5rem;"><strong>UK Office:</strong><br>
+                    439 Beverley Road,<br>
+                    Hull, HU5 1NR, England, UK</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook">f</a>
                         <a href="#" class="social-link" aria-label="Instagram">📷</a>
@@ -1027,25 +1119,26 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="programs.html">Programs</a></li>
-			<li><a href="impact.html">Impact</a></li>
-                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="programmes.html">Programmes</a></li>
+                        <li><a href="impact.html">Impact</a></li>
+                        <li><a href="partners.html">Partners</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Get Involved</h4>
                     <ul>
                         <li><a href="donate.html">Donate</a></li>
-                        <li><a href="volunteer.html">Volunteer</a></li>
-                        <li><a href="contact.html">Partner With Us</a></li>
+                        <li><a href="get-involved.html">Volunteer</a></li>
+                        <li><a href="partners.html">Partner With Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="mailto:info@tohai.org">info@tohai.org</a></li>
-                        <li><a href="tel:+234">+234 XXX XXX XXXX</a></li>
-                        <li><a href="contact.html">Contact Form</a></li>
+                        <li><a href="tel:+2347063323678">+234 706 332 3678</a></li>
+                        <li><a href="resources.html">Resources</a></li>
                     </ul>
                 </div>
             </div>
@@ -1055,7 +1148,7 @@
         </div>
     </footer>
 
-    <!-- Mobile Menu JavaScript -->
+    <!-- JavaScript -->
     <script>
         // Mobile menu functionality
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -1066,7 +1159,6 @@
             mobileMenu.classList.toggle('active');
             menuOverlay.classList.toggle('active');
             
-            // Toggle button icon
             if (mobileMenu.classList.contains('active')) {
                 mobileMenuBtn.textContent = '✕';
                 document.body.style.overflow = 'hidden';
@@ -1079,7 +1171,6 @@
         mobileMenuBtn.addEventListener('click', toggleMenu);
         menuOverlay.addEventListener('click', toggleMenu);
         
-        // Close menu when clicking on a link
         const mobileMenuLinks = mobileMenu.querySelectorAll('a');
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -1089,14 +1180,13 @@
             });
         });
         
-        // Close menu on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
                 toggleMenu();
             }
         });
 
-        // Smooth scroll for anchor links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
